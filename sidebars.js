@@ -1,0 +1,268 @@
+/**
+ * Creating a sidebar enables you to:
+ - create an ordered group of docs
+ - render a sidebar for each doc of that group
+ - provide next/previous navigation
+
+ The sidebars can be generated from the filesystem, or explicitly defined here.
+
+ Create as many sidebars as you want.
+ */
+module.exports = {
+  // Main documentation sidebar
+  tutorialSidebar: [
+    {
+      type: 'doc',
+      id: 'intro',
+      label: 'Welcome',
+    },
+    {
+      type: 'category',
+      label: 'Aero EBT',
+      collapsed: false,
+      items: [
+        'aero-ebt/intro',
+        {
+          type: 'category',
+          label: 'User Guides',
+          items: [
+            'aero-ebt/user-guides/getting-started',
+            'aero-ebt/user-guides/features',
+            'aero-ebt/user-guides/user-guide',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Technical Documentation',
+          items: [
+            'aero-ebt/technical/technologies',
+            {
+              type: 'category',
+              label: 'Implementation',
+              items: [
+                'aero-ebt/technical/implementation/overview',
+                'aero-ebt/technical/implementation/infrastructure',
+              ],
+            },
+            'aero-ebt/technical/integrations',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'B2B Documentation',
+          items: [
+            'aero-ebt/b2b/overview',
+            'aero-ebt/b2b/setup',
+          ],
+        },
+      ],
+    },
+    {
+      type: 'category',
+      label: 'EBT Instructor',
+      collapsed: false,
+      items: [
+        'ebt-instructor/intro',
+        'ebt-instructor/roadmap',
+        {
+          type: 'category',
+          label: 'Implementation Roadmaps',
+          items: [
+            'ebt-instructor/roadmap-it-department',
+            'ebt-instructor/roadmap-flight-standards',
+            'ebt-instructor/roadmap-training',
+            'ebt-instructor/roadmap-flight-ops',
+            'ebt-instructor/roadmap-scheduling',
+            'ebt-instructor/roadmap-safety',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'User Guides',
+          items: [
+            'ebt-instructor/user-guides/getting-started',
+            'ebt-instructor/user-guides/features',
+            'ebt-instructor/user-guides/user-guide',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Technical Documentation',
+          items: [
+            'ebt-instructor/technical/technologies',
+            {
+              type: 'category',
+              label: 'Implementation',
+              items: [
+                'ebt-instructor/technical/implementation/overview',
+                'ebt-instructor/technical/implementation/infrastructure',
+                {
+                  type: 'category',
+                  label: 'Department Guides',
+                  items: [
+                    {
+                      type: 'category',
+                      label: 'IT Department',
+                      items: [
+                        'ebt-instructor/technical/implementation/it-department/overview',
+                        'ebt-instructor/technical/implementation/it-department/infrastructure',
+                        'ebt-instructor/technical/implementation/it-department/azure-ad-integration',
+                        'ebt-instructor/technical/implementation/it-department/integrations',
+                      ],
+                    },
+                    {
+                      type: 'category',
+                      label: 'Flight Standards Department',
+                      items: [
+                        'ebt-instructor/technical/implementation/flight-standards/overview',
+                        'ebt-instructor/technical/implementation/flight-standards/requirements',
+                        'ebt-instructor/technical/implementation/flight-standards/integrations',
+                      ],
+                    },
+                    {
+                      type: 'category',
+                      label: 'Training Department',
+                      items: [
+                        'ebt-instructor/technical/implementation/training/overview',
+                        'ebt-instructor/technical/implementation/training/setup',
+                        'ebt-instructor/technical/implementation/training/integrations',
+                      ],
+                    },
+                    {
+                      type: 'category',
+                      label: 'Flight Ops Department',
+                      items: [
+                        'ebt-instructor/technical/implementation/flight-ops/overview',
+                        'ebt-instructor/technical/implementation/flight-ops/operations',
+                        'ebt-instructor/technical/implementation/flight-ops/integrations',
+                      ],
+                    },
+                    {
+                      type: 'category',
+                      label: 'Scheduling Department',
+                      items: [
+                        'ebt-instructor/technical/implementation/scheduling/overview',
+                        'ebt-instructor/technical/implementation/scheduling/setup',
+                        'ebt-instructor/technical/implementation/scheduling/integrations',
+                      ],
+                    },
+                    {
+                      type: 'category',
+                      label: 'Safety Department',
+                      items: [
+                        'ebt-instructor/technical/implementation/safety/overview',
+                        'ebt-instructor/technical/implementation/safety/requirements',
+                        'ebt-instructor/technical/implementation/safety/integrations',
+                      ],
+                    },
+                  ],
+                },
+              ],
+            },
+            'ebt-instructor/technical/integrations',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'B2B Documentation',
+          items: [
+            'ebt-instructor/b2b/overview',
+            'ebt-instructor/b2b/setup',
+          ],
+        },
+      ],
+    },
+    {
+      type: 'category',
+      label: 'EBT Scenario Builder',
+      collapsed: false,
+      items: [
+        'ebt-scenario-builder/intro',
+        {
+          type: 'category',
+          label: 'User Guides',
+          items: [
+            'ebt-scenario-builder/user-guides/getting-started',
+            'ebt-scenario-builder/user-guides/features',
+            'ebt-scenario-builder/user-guides/user-guide',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Technical Documentation',
+          items: [
+            'ebt-scenario-builder/technical/technologies',
+            {
+              type: 'category',
+              label: 'Implementation',
+              items: [
+                'ebt-scenario-builder/technical/implementation/overview',
+                'ebt-scenario-builder/technical/implementation/infrastructure',
+              ],
+            },
+            'ebt-scenario-builder/technical/integrations',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'B2B Documentation',
+          items: [
+            'ebt-scenario-builder/b2b/overview',
+            'ebt-scenario-builder/b2b/setup',
+          ],
+        },
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Wingman',
+      collapsed: false,
+      items: [
+        'wingman/intro',
+        {
+          type: 'category',
+          label: 'User Guides',
+          items: [
+            'wingman/user-guides/getting-started',
+            'wingman/user-guides/features',
+            'wingman/user-guides/user-guide',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Technical Documentation',
+          items: [
+            'wingman/technical/technologies',
+            {
+              type: 'category',
+              label: 'Implementation',
+              items: [
+                'wingman/technical/implementation/overview',
+                'wingman/technical/implementation/infrastructure',
+              ],
+            },
+            'wingman/technical/integrations',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'B2B Documentation',
+          items: [
+            'wingman/b2b/overview',
+            'wingman/b2b/setup',
+          ],
+        },
+      ],
+    },
+    {
+      type: 'doc',
+      id: 'terms-of-use',
+      label: 'Terms of Use',
+    },
+    {
+      type: 'doc',
+      id: 'disclaimer',
+      label: 'Disclaimer',
+    },
+  ],
+};
