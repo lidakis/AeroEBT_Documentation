@@ -164,5 +164,5 @@ Copyright © SkyDynamics. All rights reserved.
 
 ---
 
-*Built with ❤️ using Docusaurus*
+*Built with ❤️*
 

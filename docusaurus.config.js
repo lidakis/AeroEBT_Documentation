@@ -79,8 +79,8 @@ const config = {
       navbar: {
         title: 'Aero EBT',
         logo: {
-          alt: 'Aero EBT Logo',
-          src: 'img/logo.svg',
+          alt: 'SkyDynamics Logo',
+          src: 'img/skydynamics-logo-white.png',
         },
         items: [
           {
@@ -92,8 +92,6 @@ const config = {
           {
             type: 'docsVersionDropdown',
             position: 'right',
-            dropdownItemsAfter: false,
-            dropdownActiveClassDisabled: true,
           },
           {
             href: 'https://skydynamics.aero',
@@ -149,11 +147,11 @@ const config = {
             items: [
               {
                 label: 'Terms of Use',
-                to: '/docs/terms-of-use',
+                docId: 'terms-of-use',
               },
               {
                 label: 'Disclaimer',
-                to: '/docs/disclaimer',
+                docId: 'disclaimer',
               },
             ],
           },
