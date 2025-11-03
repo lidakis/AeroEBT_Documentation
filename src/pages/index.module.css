@@ -168,6 +168,6 @@
 /* Dark mode adjustments */
 @media (prefers-color-scheme: dark) {
   .features {
-    background: linear-gradient(to bottom, #1e1e1e, #2d2d2d);
+    background: linear-gradient(to bottom, #222533, #282a3a);
   }
 }

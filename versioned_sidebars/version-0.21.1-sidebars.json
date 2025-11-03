@@ -8,7 +8,7 @@
     {
       "type": "category",
       "label": "Aero EBT",
-      "collapsed": false,
+      "collapsed": true,
       "items": [
         "aero-ebt/intro",
         {
@@ -33,7 +33,59 @@
                 "aero-ebt/technical/implementation/infrastructure"
               ]
             },
-            "aero-ebt/technical/integrations"
+            {
+              "type": "category",
+              "label": "Integrations",
+              "items": [
+                "aero-ebt/technical/integrations",
+                {
+                  "type": "category",
+                  "label": "Authentication",
+                  "items": [
+                    "aero-ebt/technical/integrations/authentication/overview",
+                    {
+                      "type": "category",
+                      "label": "Single Sign-On (SSO)",
+                      "items": [
+                        "aero-ebt/technical/integrations/authentication/sso/azure-ad",
+                        "aero-ebt/technical/integrations/authentication/sso/google-workspace",
+                        "aero-ebt/technical/integrations/authentication/sso/okta"
+                      ]
+                    },
+                    {
+                      "type": "category",
+                      "label": "OAuth Providers",
+                      "items": [
+                        "aero-ebt/technical/integrations/authentication/oauth/google",
+                        "aero-ebt/technical/integrations/authentication/oauth/github",
+                        "aero-ebt/technical/integrations/authentication/oauth/apple"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "category",
+                  "label": "Data Exchange",
+                  "items": [
+                    "aero-ebt/technical/integrations/data-exchange/overview"
+                  ]
+                },
+                {
+                  "type": "category",
+                  "label": "Databases",
+                  "items": [
+                    "aero-ebt/technical/integrations/databases/overview"
+                  ]
+                },
+                {
+                  "type": "category",
+                  "label": "Airline Systems",
+                  "items": [
+                    "aero-ebt/technical/integrations/airline-systems/overview"
+                  ]
+                }
+              ]
+            }
           ]
         },
         {
@@ -49,7 +101,7 @@
     {
       "type": "category",
       "label": "EBT Instructor",
-      "collapsed": false,
+      "collapsed": true,
       "items": [
         "ebt-instructor/intro",
         "ebt-instructor/roadmap",
@@ -164,7 +216,7 @@
     {
       "type": "category",
       "label": "EBT Scenario Builder",
-      "collapsed": false,
+      "collapsed": true,
       "items": [
         "ebt-scenario-builder/intro",
         {
@@ -205,7 +257,7 @@
     {
       "type": "category",
       "label": "Wingman",
-      "collapsed": false,
+      "collapsed": true,
       "items": [
         "wingman/intro",
         {
@@ -242,6 +294,16 @@
           ]
         }
       ]
+    },
+    {
+      "type": "doc",
+      "id": "terms-of-use",
+      "label": "Terms of Use"
+    },
+    {
+      "type": "doc",
+      "id": "disclaimer",
+      "label": "Disclaimer"
     }
   ]
 }
