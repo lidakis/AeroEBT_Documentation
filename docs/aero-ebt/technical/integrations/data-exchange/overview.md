@@ -28,6 +28,7 @@ REST API integration provides programmatic access to AeroEBT data and functional
 - Import crew schedules
 - Query training history
 
+
 **Features:**
 - Standard HTTP methods (GET, POST, PUT, DELETE)
 - JSON data format
