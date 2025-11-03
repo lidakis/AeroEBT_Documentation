@@ -1,0 +1,185 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" width="1200" height="520">
+  <defs>
+    <linearGradient id="phaseGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="phaseGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#764ba2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f093fb;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="phaseGradient3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f093fb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4facfe;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="phaseGradient4" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#4facfe;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00f2fe;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="phaseGradient5" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00f2fe;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#43e97b;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="phaseGradient6" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#43e97b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#fa709a;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="520" fill="#ffffff"/>
+  
+  <!-- Title -->
+  <text x="600" y="35" font-family="Arial, sans-serif" font-size="26" font-weight="bold" fill="#1a1a1a" text-anchor="middle">Aero EBT Implementation Timeline</text>
+  <text x="600" y="55" font-family="Arial, sans-serif" font-size="12" font-style="italic" fill="#666" text-anchor="middle">General Estimate - 9 Months (36 Weeks)</text>
+  
+  <!-- Timeline header -->
+  <rect x="300" y="70" width="860" height="30" fill="#f5f5f5" stroke="#ddd" stroke-width="1"/>
+  <text x="310" y="90" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#333">Timeline (Weeks)</text>
+  
+  <!-- Week markers (every 6 weeks) -->
+  <g id="weekMarkers">
+    <line x1="300" y1="70" x2="300" y2="480" stroke="#333" stroke-width="2"/>
+    <text x="295" y="485" font-family="Arial, sans-serif" font-size="11" fill="#333" text-anchor="middle" font-weight="bold">0</text>
+    
+    <line x1="443" y1="70" x2="443" y2="480" stroke="#e0e0e0" stroke-width="1" stroke-dasharray="2,2"/>
+    <text x="438" y="485" font-family="Arial, sans-serif" font-size="11" fill="#666" text-anchor="middle">6</text>
+    
+    <line x1="587" y1="70" x2="587" y2="480" stroke="#e0e0e0" stroke-width="1" stroke-dasharray="2,2"/>
+    <text x="582" y="485" font-family="Arial, sans-serif" font-size="11" fill="#666" text-anchor="middle">12</text>
+    
+    <line x1="730" y1="70" x2="730" y2="480" stroke="#e0e0e0" stroke-width="1" stroke-dasharray="2,2"/>
+    <text x="725" y="485" font-family="Arial, sans-serif" font-size="11" fill="#666" text-anchor="middle">18</text>
+    
+    <line x1="874" y1="70" x2="874" y2="480" stroke="#e0e0e0" stroke-width="1" stroke-dasharray="2,2"/>
+    <text x="869" y="485" font-family="Arial, sans-serif" font-size="11" fill="#666" text-anchor="middle">24</text>
+    
+    <line x1="1017" y1="70" x2="1017" y2="480" stroke="#e0e0e0" stroke-width="1" stroke-dasharray="2,2"/>
+    <text x="1012" y="485" font-family="Arial, sans-serif" font-size="11" fill="#666" text-anchor="middle">30</text>
+    
+    <line x1="1160" y1="70" x2="1160" y2="480" stroke="#333" stroke-width="2"/>
+    <text x="1155" y="485" font-family="Arial, sans-serif" font-size="11" fill="#333" text-anchor="middle" font-weight="bold">36</text>
+  </g>
+  
+  <!-- Phase 1: Planning and Assessment (Weeks 0-6) -->
+  <g id="phase1">
+    <rect x="300" y="110" width="143" height="45" fill="url(#phaseGradient1)" rx="5"/>
+    <text x="371" y="135" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">Phase 1</text>
+    <text x="371" y="148" font-family="Arial, sans-serif" font-size="11" fill="#ffffff" text-anchor="middle">Planning &amp; Assessment</text>
+    <text x="290" y="137" font-family="Arial, sans-serif" font-size="12" fill="#333">1.</text>
+  </g>
+  
+  <!-- Phase 2: Infrastructure Setup (Weeks 6-12) -->
+  <g id="phase2">
+    <rect x="443" y="110" width="144" height="45" fill="url(#phaseGradient2)" rx="5"/>
+    <text x="515" y="135" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">Phase 2</text>
+    <text x="515" y="148" font-family="Arial, sans-serif" font-size="11" fill="#ffffff" text-anchor="middle">Infrastructure Setup</text>
+    <text x="290" y="137" font-family="Arial, sans-serif" font-size="12" fill="#333">2.</text>
+  </g>
+  
+  <!-- Phase 3: System Configuration (Weeks 12-18) -->
+  <g id="phase3">
+    <rect x="587" y="110" width="143" height="45" fill="url(#phaseGradient3)" rx="5"/>
+    <text x="658" y="135" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">Phase 3</text>
+    <text x="658" y="148" font-family="Arial, sans-serif" font-size="11" fill="#ffffff" text-anchor="middle">System Configuration</text>
+    <text x="290" y="137" font-family="Arial, sans-serif" font-size="12" fill="#333">3.</text>
+  </g>
+  
+  <!-- Phase 4: Integration Setup (Weeks 15-21, overlapping) -->
+  <g id="phase4">
+    <rect x="658" y="180" width="144" height="45" fill="url(#phaseGradient4)" rx="5"/>
+    <text x="730" y="205" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">Phase 4</text>
+    <text x="730" y="218" font-family="Arial, sans-serif" font-size="11" fill="#ffffff" text-anchor="middle">Integration Setup</text>
+    <text x="290" y="207" font-family="Arial, sans-serif" font-size="12" fill="#333">4.</text>
+  </g>
+  
+  <!-- Phase 5: Testing and Validation (Weeks 21-27) -->
+  <g id="phase5">
+    <rect x="802" y="180" width="144" height="45" fill="url(#phaseGradient5)" rx="5"/>
+    <text x="874" y="205" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">Phase 5</text>
+    <text x="874" y="218" font-family="Arial, sans-serif" font-size="11" fill="#ffffff" text-anchor="middle">Testing &amp; Validation</text>
+    <text x="290" y="207" font-family="Arial, sans-serif" font-size="12" fill="#333">5.</text>
+  </g>
+  
+  <!-- Phase 6: Training and Rollout (Weeks 27-36) -->
+  <g id="phase6">
+    <rect x="946" y="250" width="214" height="45" fill="url(#phaseGradient6)" rx="5"/>
+    <text x="1053" y="275" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">Phase 6</text>
+    <text x="1053" y="288" font-family="Arial, sans-serif" font-size="11" fill="#ffffff" text-anchor="middle">Training &amp; Rollout</text>
+    <text x="290" y="277" font-family="Arial, sans-serif" font-size="12" fill="#333">6.</text>
+  </g>
+  
+  <!-- Milestone markers -->
+  <g id="milestones">
+    <!-- Milestone 1: Planning Complete -->
+    <circle cx="443" cy="132" r="8" fill="#fff" stroke="#333" stroke-width="2"/>
+    <text x="443" y="137" font-family="Arial, sans-serif" font-size="10" fill="#333" text-anchor="middle" font-weight="bold">✓</text>
+    
+    <!-- Milestone 2: Infrastructure Ready -->
+    <circle cx="587" cy="132" r="8" fill="#fff" stroke="#333" stroke-width="2"/>
+    <text x="587" y="137" font-family="Arial, sans-serif" font-size="10" fill="#333" text-anchor="middle" font-weight="bold">✓</text>
+    
+    <!-- Milestone 3: System Configured -->
+    <circle cx="730" cy="132" r="8" fill="#fff" stroke="#333" stroke-width="2"/>
+    <text x="730" y="137" font-family="Arial, sans-serif" font-size="10" fill="#333" text-anchor="middle" font-weight="bold">✓</text>
+    
+    <!-- Milestone 4: Integrations Complete -->
+    <circle cx="802" cy="202" r="8" fill="#fff" stroke="#333" stroke-width="2"/>
+    <text x="802" y="207" font-family="Arial, sans-serif" font-size="10" fill="#333" text-anchor="middle" font-weight="bold">✓</text>
+    
+    <!-- Milestone 5: Testing Complete -->
+    <circle cx="946" cy="202" r="8" fill="#fff" stroke="#333" stroke-width="2"/>
+    <text x="946" y="207" font-family="Arial, sans-serif" font-size="10" fill="#333" text-anchor="middle" font-weight="bold">✓</text>
+    
+    <!-- Milestone 6: Go-Live -->
+    <circle cx="1160" cy="272" r="10" fill="#4caf50" stroke="#2e7d32" stroke-width="2"/>
+    <text x="1160" y="276" font-family="Arial, sans-serif" font-size="12" fill="#fff" text-anchor="middle" font-weight="bold">🚀</text>
+  </g>
+  
+  <!-- Legend -->
+  <g id="legend">
+    <rect x="50" y="350" width="200" height="140" fill="#f9f9f9" stroke="#ddd" stroke-width="1" rx="5"/>
+    <text x="150" y="375" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333" text-anchor="middle">Legend</text>
+    
+    <!-- Legend items -->
+    <rect x="60" y="390" width="20" height="12" fill="url(#phaseGradient1)" rx="2"/>
+    <text x="85" y="401" font-family="Arial, sans-serif" font-size="11" fill="#333">Implementation Phase</text>
+    
+    <circle cx="70" cy="415" r="6" fill="#fff" stroke="#333" stroke-width="1.5"/>
+    <text x="85" y="419" font-family="Arial, sans-serif" font-size="11" fill="#333">Milestone</text>
+    
+    <circle cx="70" cy="437" r="8" fill="#4caf50" stroke="#2e7d32" stroke-width="1.5"/>
+    <text x="85" y="441" font-family="Arial, sans-serif" font-size="11" fill="#333">Go-Live</text>
+    
+    <text x="60" y="465" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#d32f2f">* General Estimate</text>
+    <text x="60" y="477" font-family="Arial, sans-serif" font-size="10" fill="#666">Timelines may vary by</text>
+    <text x="60" y="488" font-family="Arial, sans-serif" font-size="10" fill="#666">organization and complexity</text>
+  </g>
+  
+  <!-- Connecting lines showing dependencies -->
+  <g id="dependencies" opacity="0.3">
+    <line x1="443" y1="132" x2="443" y2="132" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <line x1="587" y1="132" x2="587" y2="132" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <line x1="730" y1="132" x2="730" y2="180" stroke="#666" stroke-width="1.5"/>
+    <line x1="802" y1="202" x2="802" y2="202" stroke="#666" stroke-width="1.5"/>
+    <line x1="946" y1="202" x2="946" y2="250" stroke="#666" stroke-width="1.5"/>
+  </g>
+  
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#666"/>
+    </marker>
+  </defs>
+  
+  <!-- Duration labels -->
+  <g id="durationLabels" font-family="Arial, sans-serif" font-size="10" fill="#666">
+    <text x="371" y="168" text-anchor="middle">6 weeks</text>
+    <text x="515" y="168" text-anchor="middle">6 weeks</text>
+    <text x="658" y="168" text-anchor="middle">6 weeks</text>
+    <text x="730" y="238" text-anchor="middle">6 weeks</text>
+    <text x="874" y="238" text-anchor="middle">6 weeks</text>
+    <text x="1053" y="308" text-anchor="middle">9 weeks</text>
+  </g>
+  
+</svg>
