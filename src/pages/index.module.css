@@ -165,9 +165,10 @@
   transform: scale(1.1) rotate(5deg);
 }
 
-/* Dark mode adjustments */
-@media (prefers-color-scheme: dark) {
-  .features {
-    background: linear-gradient(to bottom, #222533, #282a3a);
-  }
+/* Theme-aware background using Docusaurus data-theme attribute */
+[data-theme='dark'] .features {
+  background: linear-gradient(to bottom, #222533, #282a3a);
+}
+[data-theme='light'] .features {
+  background: linear-gradient(to bottom, #f8f9fa, #ffffff);
 }
