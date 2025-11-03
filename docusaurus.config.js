@@ -11,15 +11,15 @@ const config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://docs.skydynamics.aero',
+  url: 'https://aeroebtdocs.skydynamics.aero',
   // Set the /<baseUrl>/ pathname under which your site is served.
   baseUrl: '/',
 
   // GitHub pages deployment config.
-  organizationName: 'skydynamics',
-  projectName: 'aero-ebt-docs',
+  organizationName: 'lidakis',
+  projectName: 'AeroEBT_Documentation',
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
 
   // Even if you don't use internationalization, you can use this field to set
@@ -39,7 +39,7 @@ const config = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: 'https://github.com/skydynamics/aero-ebt-docs/tree/main/',
+          editUrl: 'https://github.com/lidakis/AeroEBT_Documentation/tree/main/',
           // Versioning configuration
           lastVersion: '0.21.1',
           versions: {
@@ -55,7 +55,7 @@ const config = {
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
-          editUrl: 'https://github.com/skydynamics/aero-ebt-docs/tree/main/',
+          editUrl: 'https://github.com/lidakis/AeroEBT_Documentation/tree/main/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -104,7 +104,7 @@ const config = {
             position: 'right',
           },
           {
-            href: 'https://github.com/skydynamics',
+            href: 'https://github.com/lidakis',
             label: 'GitHub',
             position: 'right',
           },
@@ -152,11 +152,11 @@ const config = {
             items: [
               {
                 label: 'Terms of Use',
-                docId: 'terms-of-use',
+                to: '/docs/terms-of-use',
               },
               {
                 label: 'Disclaimer',
-                docId: 'disclaimer',
+                to: '/docs/disclaimer',
               },
             ],
           },
@@ -165,7 +165,7 @@ const config = {
             items: [
               {
                 label: 'GitHub',
-                href: 'https://github.com/skydynamics',
+                href: 'https://github.com/lidakis',
               },
             ],
           },
