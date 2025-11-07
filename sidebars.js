@@ -173,10 +173,12 @@ module.exports = {
                       label: 'IT Department',
                       collapsed: true,
                       items: [
+                        'ebt-instructor/technical/implementation/it-department/architecture',
                         'ebt-instructor/technical/implementation/it-department/overview',
                         'ebt-instructor/technical/implementation/it-department/infrastructure',
                         'ebt-instructor/technical/implementation/it-department/azure-ad-integration',
                         'ebt-instructor/technical/implementation/it-department/integrations',
+                        'ebt-instructor/technical/implementation/it-department/penetration-tests-report',
                       ],
                     },
                     {

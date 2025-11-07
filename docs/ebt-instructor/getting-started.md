@@ -61,3 +61,4 @@ This guide will help instructors set up and start using EBT Instructor.
 
 *For instructor support, contact your training administrator*
 
+

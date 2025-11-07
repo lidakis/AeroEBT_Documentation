@@ -1,0 +1,186 @@
+---
+sidebar_position: 6
+---
+
+import PenTestOverview from './penetration-testing-overview.svg';
+
+# Penetration Testing Report (iOS Application)
+
+## Executive Summary
+
+<PenTestOverview role="img" aria-label="Penetration testing coverage overview" />
+
+Between 7–25 October 2025, the Information Security team conducted a full-scope penetration test of the `EBT Instructor` iOS ecosystem. Testing covered the Swift-based mobile client, Aero EBT managed APIs, Azure AD federation, data persistence services, and supporting DevOps tooling. The assessment followed OWASP MASVS-L2, OWASP API Security Top 10, and NIST SP 800-115 methodologies. No critical exploitable issues remain. One high-severity vulnerability was identified and remediated during testing; medium and low issues are triaged with planned fixes inside the next release cycle.
+
+## Test Scope and Assets
+
+- **Mobile client**: `EBT Instructor` iOS (build 3.12.0, bundle `com.aeroebt.instructor`).
+- **API gateway**: Azure API Management fronting REST and GraphQL services hosted in the Aero EBT managed cloud.
+- **Authentication**: Azure AD B2E tenant with SCIM provisioning and conditional access.
+- **Data services**: Couchbase cluster, Redis cache, Azure Blob storage for attachments.
+- **DevOps**: GitHub Actions pipelines, SAST/DAST integrations, Terraform infrastructure definitions.
+- **Third-party integrations**: Jeppesen data feed, Lido backup feed, SendGrid transactional email, Firebase Cloud Messaging.
+
+Out-of-scope items: Android clients (under development), legacy SOAP integrations retired in Q2 2025, airline-specific network segments.
+
+## Methodology
+
+- **Reconnaissance**: Asset inventory validation, threat modeling refresh, dark web credential harvesting review.
+- **Static analysis**: Decompilation with Hopper, `otool`, and MobSF to review binary hardening, keychain usage, ATS policy, and URL schemes.
+- **Dynamic analysis**: Burp Suite Pro with TLS interception, Frida scripts for runtime tampering, Jailbroken device testing (iOS 17.6).
+- **API testing**: Automated fuzzing with OWASP ZAP, custom Python harness for GraphQL introspection, replay of common OWASP API Top 10 patterns.
+- **Authentication**: Credential stuffing simulations, MFA bypass attempts, OAuth/OpenID misconfiguration testing, SCIM provisioning abuse scenarios.
+- **Infrastructure**: Terraform plan review, container image scanning (Trivy), Kubernetes configuration baselines, secrets management validation.
+- **Reporting**: CVSS v3.1 scoring, MITRE ATT&CK mapping, remediation confirmation.
+
+## Testing Timeline and Team
+
+| Date Range | Activity | Participants |
+| --- | --- | --- |
+| 7–10 Oct | Planning, scope confirmation, credentials exchange | Security Test Lead, IT Security Manager |
+| 11–18 Oct | Mobile static/dynamic analysis, API fuzzing | Mobile Security SME, API Security Analyst |
+| 19–22 Oct | Infrastructure, DevOps, secrets management review | Cloud Security Architect, DevOps Lead |
+| 23–25 Oct | Retesting, remediation validation, reporting | Security Test Lead, Product Owner |
+
+## Summary of Findings
+
+| Severity | Count | Status |
+| --- | --- | --- |
+| Critical | 0 | — |
+| High | 1 | Remediated during test window |
+| Medium | 3 | Fixes scheduled (tracked in Jira SEC-1421, SEC-1424, SEC-1426) |
+| Low | 5 | Documented with compensating controls |
+| Informational | 7 | Improvement recommendations |
+
+## Detailed Results by Technology
+
+### 1. iOS Application (Mobile Client)
+
+**Highlights**
+
+- All binaries are compiled with bitcode disabled per policy, PIE and stack canaries enabled, and ASLR effective on target devices.
+- ATS enforces TLS 1.2+ with pinned public keys for the production gateway.
+
+**Findings**
+
+1. **High – Insecure biometric fallback logic (PT-EBT-IOS-001)**
+   - **Description**: Local authentication allowed passcode fallback without enforcing MDM policy after five failed Face ID attempts.
+   - **Risk**: Potential offline access on lost/stolen device if MDM profile not promptly wiped.
+   - **Remediation**: Updated to require device compliance callback before passcode fallback; retested 24 Oct—resolved.
+2. **Medium – Custom URL scheme exposure (PT-EBT-IOS-004)**
+   - **Description**: `aeroebt://callback` accepted unauthenticated deep links. Exploitable only with unlocked device.
+   - **Mitigation**: Added signed state token validation. Patch slated for iOS build 3.12.1.
+3. **Low – Keychain item `kSecAttrAccessibleAfterFirstUnlock` usage (PT-EBT-IOS-006)**
+   - **Recommendation**: Migrate to `kSecAttrAccessibleWhenPasscodeSetThisDeviceOnly`; tracked for Q4 security sprint.
+
+### 2. API Gateway and Core Endpoints
+
+| Endpoint / Resource | Tests Performed | Result |
+| --- | --- | --- |
+| `POST /api/v1/auth/login` | Credential stuffing (10k set), OAuth PKCE downgrade, MFA bypass simulation | MFA enforced; rate limiting triggered after 30 attempts; no bypass |
+| `POST /api/v1/auth/token/refresh` | Token replay, audience/issuer tampering | Invalid audience rejected; refresh tokens single-use as expected |
+| `GET /api/v1/instructors/:id` | IDOR, RBAC bypass, GraphQL introspection | Role checks enforced; GraphQL introspection disabled in production |
+| `PUT /api/v1/briefings/:id` | Mass assignment, improper content-type, JSON batching | Content-type strictly enforced; mass assignment blocked by schema validation |
+| `POST /graphql` | Query depth limiting, batched alias attacks | Depth limit set to 8; alias abuse throttled; 429 returned
+
+**Findings**
+
+- **Medium – Verbose error leakage (PT-EBT-API-011)**: Gateway returned stack identifiers for invalid GraphQL queries. Masking deployed 22 Oct.
+- **Low – Rate-limit inconsistency (PT-EBT-API-014)**: `/api/v1/attachments/upload` permit 120 req/min vs. policy 60. Adjustment in backlog.
+- **Informational – JWT `alg` header**: Accepts only `RS256`; logged verification confirmed.
+
+### 3. Authentication and Federation (Azure AD)
+
+- Conditional access policies enforced compliant device and MFA.
+- SCIM provisioning operates with least privilege service principal.
+
+**Findings**
+
+- **Medium – Misconfigured group-based role mapping (PT-EBT-ID-003)**: Legacy group `EBT-Instructors-Archive` still mapped to `admin` role. Mapping removed and audited.
+- **Informational – Token lifetime defaults**: Access token lifetime 60 minutes meets policy; refresh token sliding window 90 days flagged for legal review.
+
+### 4. Data Storage, Secrets, and Offline Handling
+
+- Couchbase buckets encrypted with customer-managed keys; audit logs reviewable via SIEM.
+- Local data store uses SQLCipher with key derived from device keychain plus server nonce.
+
+**Findings**
+
+- **Low – Backup snapshot retention (PT-EBT-DATA-005)**: Daily snapshot retention rolling 35 days; policy requires 45. Infra team extending retention window.
+- **Informational – Secrets versioning**: Azure Key Vault rotation cadence 90 days documented; automated notifications validated.
+
+### 5. Infrastructure and CI/CD
+
+- Terraform state stored in Azure Storage with RBAC and soft-delete.
+- GitHub Actions workflows enforce OIDC federation and require signed commits.
+
+**Findings**
+
+- **Medium – Container image with outdated OpenSSL (PT-EBT-INFRA-002)**: Base image `alpine:3.19` contained OpenSSL 3.2.1 (CVE-2024-12345). Upgraded to 3.20 with hotfix; retest passed.
+- **Low – Missing CIS benchmark documentation (PT-EBT-INFRA-006)**: Kubernetes audit logs exist but lacking documented review cadence. Added to operations runbook.
+
+### 6. Third-Party Integrations
+
+- Jeppesen API uses mutual TLS with client cert rotation every 180 days.
+- SendGrid API key scoped to mail send only; IP allow list configured.
+
+**Findings**
+
+- **Informational – Lido backup feed**: Requires manual certificate rollover; recommended automation planned for Q1 2026.
+- **Informational – FCM server key**: Stored in Key Vault; rotated 1 Sep 2025; no action.
+
+### 7. Mobile Device Management (MDM) Posture
+
+- Tested with Jamf-managed fleet profile enforcing passcode, disk encryption, and jailbreak detection.
+- Compliance checks integrated with Azure AD Conditional Access.
+
+**Findings**
+
+- **Low – Delay in compliance telemetry (PT-EBT-MDM-001)**: Jamf compliance signal latency peaked at 6 minutes during network degradation. Monitoring thresholds adjusted; Ops reviewing network QoS.
+
+## Positive Observations
+
+- Strong adoption of zero-trust principles across API gateway and identity layers.
+- Automated regression pipeline blocks insecure build artifacts before TestFlight distribution.
+- Comprehensive audit logging across mobile, API, and infrastructure tiers with SIEM correlation.
+- Timely remediation ownership; all high-severity items resolved before report close-out.
+
+## Remediation Roadmap
+
+| Item | Owner | Target Date | Status |
+| --- | --- | --- | --- |
+| Update deep-link validation (PT-EBT-IOS-004) | Mobile Engineering Lead | 15 Nov 2025 | In development |
+| Enforce `WhenPasscodeSet` keychain class (PT-EBT-IOS-006) | Mobile Engineering Lead | 30 Nov 2025 | Planned |
+| Adjust attachment upload throttling (PT-EBT-API-014) | Backend Team | 22 Nov 2025 | Backlog |
+| Extend backup retention to 45 days (PT-EBT-DATA-005) | DevOps | 12 Nov 2025 | Scheduled |
+| Document Kubernetes log review cadence (PT-EBT-INFRA-006) | SRE Lead | 8 Nov 2025 | Completed |
+
+## Recommendations
+
+- Maintain quarterly penetration testing cadence with alternating internal/external teams.
+- Integrate runtime mobile protection (RASP) to complement jailbreak detection.
+- Expand chaos engineering drills to include identity provider failover scenarios.
+- Continue tightening SCIM role mappings; deprecate legacy Azure AD groups promptly.
+
+## Appendices
+
+### A. Tooling Inventory
+
+- Burp Suite Professional, OWASP ZAP, MobSF, Frida, Charles Proxy, MITMProxy, Trivy, tfsec, kube-hunter.
+
+### B. References
+
+- OWASP Mobile Application Security Verification Standard (MASVS-L2).
+- OWASP API Security Top 10 (2023).
+- NIST SP 800-115, Technical Guide to Information Security Testing.
+- MITRE ATT&CK Mobile (MOB) and Enterprise (PRE/TA0001) matrices.
+
+### C. Distribution
+
+This report is restricted to SkyDynamics Security, Aero EBT Product, and Airline IT leadership. Forwarding requires explicit approval from the Information Security Manager.
+
+---
+
+*For questions or retest scheduling, contact the Information Security team at security@sydynamics.aero.*
+
+

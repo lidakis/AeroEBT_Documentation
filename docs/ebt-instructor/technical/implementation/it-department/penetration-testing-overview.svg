@@ -1,0 +1,177 @@
+<svg width="960" height="1020" viewBox="0 0 960 1020" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+<title id="title">EBT Instructor Penetration Testing Overview</title>
+<desc id="desc">Multi-panel illustration summarizing architecture coverage, attack surface flows, and testing timeline for the EBT Instructor iOS penetration test.</desc>
+<defs>
+  <linearGradient id="bgGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" stop-color="#F8FAFF"/>
+    <stop offset="100%" stop-color="#E6EEFF"/>
+  </linearGradient>
+  <linearGradient id="panelGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" stop-color="#FFFFFF"/>
+    <stop offset="100%" stop-color="#F2F6FF"/>
+  </linearGradient>
+  <linearGradient id="coreGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" stop-color="#215CE0"/>
+    <stop offset="100%" stop-color="#0F3D96"/>
+  </linearGradient>
+  <filter id="panelShadow" x="-10%" y="-10%" width="120%" height="120%" color-interpolation-filters="sRGB">
+    <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0C1A33" flood-opacity="0.12"/>
+  </filter>
+  <marker id="arrow" markerWidth="11" markerHeight="11" refX="9" refY="5.5" orient="auto" markerUnits="strokeWidth">
+    <path d="M0,0 L11,5.5 L0,11 Z" fill="#2B3E65"/>
+  </marker>
+</defs>
+
+<rect width="960" height="1020" fill="url(#bgGradient)"/>
+
+<!-- Header -->
+<text x="70" y="80" fill="#172B4D" font-family="Helvetica, Arial, sans-serif" font-size="34" font-weight="700">EBT Instructor Penetration Test Coverage</text>
+<text x="70" y="112" fill="#4A5F7E" font-family="Helvetica, Arial, sans-serif" font-size="16">Architecture footprint, threat entry points, and execution timeline for the October 2025 assessment.</text>
+
+<!-- Panel headings -->
+<text x="90" y="170" fill="#637290" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="600" letter-spacing="0.4">ARCHITECTURE COVERAGE</text>
+<text x="90" y="430" fill="#637290" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="600" letter-spacing="0.4">ATTACK SURFACE &amp; CONTROLS</text>
+<text x="90" y="710" fill="#637290" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="600" letter-spacing="0.4">TEST EXECUTION TIMELINE</text>
+
+<!-- Panel 1: Architecture Coverage -->
+<g transform="translate(90,190)">
+  <rect width="780" height="200" rx="22" fill="url(#panelGradient)" stroke="#C9D6F5" stroke-width="1.4" filter="url(#panelShadow)"/>
+  <text x="36" y="54" fill="#14325F" font-family="Helvetica, Arial, sans-serif" font-size="22" font-weight="700">Systems in Scope</text>
+  <text x="36" y="86" fill="#5A6E92" font-family="Helvetica, Arial, sans-serif" font-size="14">End-to-end validation of the iOS client, managed APIs, identity layer, and data services.</text>
+
+  <!-- Columns -->
+  <g transform="translate(36,110)">
+    <rect width="180" height="120" rx="18" fill="#FFFFFF" stroke="#D7E2FF" stroke-width="1.1"/>
+    <text x="16" y="34" fill="#12305B" font-family="Helvetica, Arial, sans-serif" font-size="16" font-weight="700">iOS Client</text>
+    <text x="16" y="58" fill="#5C6F90" font-family="Helvetica, Arial, sans-serif" font-size="12">SwiftUI, local storage, biometric auth, MDM posture checks.</text>
+  </g>
+
+  <g transform="translate(240,110)">
+    <rect width="180" height="120" rx="18" fill="#FFFFFF" stroke="#D7E2FF" stroke-width="1.1"/>
+    <text x="16" y="34" fill="#12305B" font-family="Helvetica, Arial, sans-serif" font-size="16" font-weight="700">API Gateway</text>
+    <text x="16" y="58" fill="#5C6F90" font-family="Helvetica, Arial, sans-serif" font-size="12">REST &amp; GraphQL, WAF policies, throttling, mTLS to services.</text>
+  </g>
+
+  <g transform="translate(444,110)">
+    <rect width="180" height="120" rx="18" fill="#FFFFFF" stroke="#D7E2FF" stroke-width="1.1"/>
+    <text x="16" y="34" fill="#12305B" font-family="Helvetica, Arial, sans-serif" font-size="16" font-weight="700">Identity Layer</text>
+    <text x="16" y="58" fill="#5C6F90" font-family="Helvetica, Arial, sans-serif" font-size="12">Azure AD SSO, SCIM provisioning, conditional access, MFA.</text>
+  </g>
+
+  <g transform="translate(648,110)">
+    <rect width="180" height="120" rx="18" fill="#FFFFFF" stroke="#D7E2FF" stroke-width="1.1"/>
+    <text x="16" y="34" fill="#12305B" font-family="Helvetica, Arial, sans-serif" font-size="16" font-weight="700">Data Services</text>
+    <text x="16" y="58" fill="#5C6F90" font-family="Helvetica, Arial, sans-serif" font-size="12">Couchbase, Redis, Blob storage, third-party data feeds, secrets vault.</text>
+  </g>
+</g>
+
+<!-- Panel 2: Attack Surface & Controls -->
+<g transform="translate(90,450)">
+  <rect width="780" height="210" rx="22" fill="url(#panelGradient)" stroke="#C9D6F5" stroke-width="1.4" filter="url(#panelShadow)"/>
+  <text x="36" y="52" fill="#14325F" font-family="Helvetica, Arial, sans-serif" font-size="22" font-weight="700">Threat Entry Points vs Controls</text>
+  <text x="36" y="84" fill="#5A6E92" font-family="Helvetica, Arial, sans-serif" font-size="14">Key ingress paths exercised during testing and the layered defenses verified.</text>
+
+  <!-- Flow diagram -->
+  <g transform="translate(36,110)">
+    <rect width="180" height="80" rx="18" fill="#FFFFFF" stroke="#D7E2FF" stroke-width="1"/>
+    <text x="90" y="36" text-anchor="middle" fill="#12305B" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="700">External Actors</text>
+    <text x="90" y="56" text-anchor="middle" fill="#5C6F90" font-family="Helvetica, Arial, sans-serif" font-size="11">Attackers, rogue apps, misused creds</text>
+  </g>
+
+  <g transform="translate(276,110)">
+    <rect width="180" height="80" rx="18" fill="#FFFFFF" stroke="#D7E2FF" stroke-width="1"/>
+    <text x="90" y="34" text-anchor="middle" fill="#12305B" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="700">Entry Points</text>
+    <text x="90" y="54" text-anchor="middle" fill="#5C6F90" font-family="Helvetica, Arial, sans-serif" font-size="11">Mobile app, API edge, webhook ingest</text>
+  </g>
+
+  <g transform="translate(516,110)">
+    <rect width="180" height="80" rx="18" fill="#FFFFFF" stroke="#D7E2FF" stroke-width="1"/>
+    <text x="90" y="34" text-anchor="middle" fill="#12305B" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="700">Controls Validated</text>
+    <text x="90" y="54" text-anchor="middle" fill="#5C6F90" font-family="Helvetica, Arial, sans-serif" font-size="11">MFA, WAF, RBAC, secrets governance</text>
+  </g>
+
+  <g transform="translate(696,110)">
+    <rect width="180" height="80" rx="18" fill="#224CA6" stroke="#13316C" stroke-width="1">
+      <animate attributeName="fill" values="#224CA6;#1B3F8E;#224CA6" dur="6s" repeatCount="indefinite"/>
+    </rect>
+    <text x="90" y="34" text-anchor="middle" fill="#FFFFFF" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="700">Outcomes</text>
+    <text x="90" y="54" text-anchor="middle" fill="#CFE1FF" font-family="Helvetica, Arial, sans-serif" font-size="11">Zero criticals, controls effective</text>
+  </g>
+
+  <!-- Arrows -->
+  <g stroke="#2C3E66" stroke-width="2.2" fill="none" marker-end="url(#arrow)" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M270 150 H 276"/>
+    <path d="M510 150 H 516"/>
+    <path d="M690 150 H 696"/>
+  </g>
+
+  <!-- Bullet rows -->
+  <g transform="translate(36,200)">
+    <text x="0" y="0" fill="#1B3563" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="600">Vectors Simulated:</text>
+    <text x="150" y="0" fill="#4F6283" font-family="Helvetica, Arial, sans-serif" font-size="12">Credential stuffing · API injection · Man-in-the-middle · Jailbreak tampering</text>
+  </g>
+  <g transform="translate(36,220)">
+    <text x="0" y="0" fill="#1B3563" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="600">Controls Confirmed:</text>
+    <text x="150" y="0" fill="#4F6283" font-family="Helvetica, Arial, sans-serif" font-size="12">Conditional Access · TLS pinning · Schema validation · Secrets rotation · SIEM alerting</text>
+  </g>
+</g>
+
+<!-- Panel 3: Timeline -->
+<g transform="translate(90,730)">
+  <rect width="780" height="220" rx="22" fill="url(#panelGradient)" stroke="#C9D6F5" stroke-width="1.4" filter="url(#panelShadow)"/>
+  <text x="36" y="56" fill="#14325F" font-family="Helvetica, Arial, sans-serif" font-size="22" font-weight="700">Execution Timeline</text>
+  <text x="36" y="88" fill="#5A6E92" font-family="Helvetica, Arial, sans-serif" font-size="14">Sequential phases, leads, and tooling across the 19-day engagement.</text>
+
+  <!-- Timeline bar -->
+  <g transform="translate(36,120)">
+    <rect width="708" height="8" rx="4" fill="#D4E0FF"/>
+    <rect x="0" width="112" height="8" rx="4" fill="#224CA6"/>
+    <rect x="132" width="196" height="8" rx="4" fill="#2F5ED1"/>
+    <rect x="348" width="176" height="8" rx="4" fill="#3B6BE0"/>
+    <rect x="544" width="200" height="8" rx="4" fill="#4C7BEE"/>
+
+    <!-- Phase labels -->
+    <text x="0" y="-16" fill="#133160" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="600">7–10 Oct</text>
+    <text x="6" y="24" fill="#4F6283" font-family="Helvetica, Arial, sans-serif" font-size="12">Planning &amp; Threat Modeling</text>
+
+    <text x="132" y="-16" fill="#133160" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="600">11–18 Oct</text>
+    <text x="138" y="24" fill="#4F6283" font-family="Helvetica, Arial, sans-serif" font-size="12">Mobile &amp; API Exploitation</text>
+
+    <text x="348" y="-16" fill="#133160" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="600">19–22 Oct</text>
+    <text x="354" y="24" fill="#4F6283" font-family="Helvetica, Arial, sans-serif" font-size="12">Infrastructure &amp; Secrets Review</text>
+
+    <text x="544" y="-16" fill="#133160" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="600">23–25 Oct</text>
+    <text x="550" y="24" fill="#4F6283" font-family="Helvetica, Arial, sans-serif" font-size="12">Remediation Validation &amp; Reporting</text>
+  </g>
+
+  <!-- Team callouts -->
+  <g transform="translate(36,170)">
+    <rect width="180" height="70" rx="16" fill="#FFFFFF" stroke="#D7E2FF" stroke-width="1"/>
+    <text x="16" y="28" fill="#12305B" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="700">Security Test Lead</text>
+    <text x="16" y="48" fill="#4F6283" font-family="Helvetica, Arial, sans-serif" font-size="11">Engagement owner, CVSS scoring, stakeholder comms</text>
+  </g>
+
+  <g transform="translate(256,170)">
+    <rect width="180" height="70" rx="16" fill="#FFFFFF" stroke="#D7E2FF" stroke-width="1"/>
+    <text x="16" y="28" fill="#12305B" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="700">Mobile Security SME</text>
+    <text x="16" y="48" fill="#4F6283" font-family="Helvetica, Arial, sans-serif" font-size="11">Reverse engineering, runtime tampering, jailbreak lab</text>
+  </g>
+
+  <g transform="translate(476,170)">
+    <rect width="180" height="70" rx="16" fill="#FFFFFF" stroke="#D7E2FF" stroke-width="1"/>
+    <text x="16" y="28" fill="#12305B" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="700">Cloud Security Architect</text>
+    <text x="16" y="48" fill="#4F6283" font-family="Helvetica, Arial, sans-serif" font-size="11">Terraform review, secrets governance, DR validation</text>
+  </g>
+
+  <g transform="translate(696,170)">
+    <rect width="180" height="70" rx="16" fill="#FFFFFF" stroke="#D7E2FF" stroke-width="1"/>
+    <text x="16" y="28" fill="#12305B" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="700">Product Owner</text>
+    <text x="16" y="48" fill="#4F6283" font-family="Helvetica, Arial, sans-serif" font-size="11">Risk alignment, remediation prioritization, approval</text>
+  </g>
+</g>
+
+<!-- Footer note -->
+<text x="70" y="990" fill="#4A5B78" font-family="Helvetica, Arial, sans-serif" font-size="13">Refer to the penetration testing report for detailed findings, CVSS scores, and remediation commitments.</text>
+
+</svg>
+

@@ -79,3 +79,4 @@ EBT Instructor requires a robust, scalable infrastructure to support training op
 
 *For detailed infrastructure planning, contact your IT department or implementation team*
 
+

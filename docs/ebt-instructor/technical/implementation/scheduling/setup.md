@@ -20,3 +20,4 @@ Setup guide for Scheduling Department configuration.
 
 *Detailed setup instructions available*
 
+

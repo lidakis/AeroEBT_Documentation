@@ -63,3 +63,4 @@ Comprehensive feature overview for EBT Instructor.
 
 *See the [User Guide](./user-guide) for detailed instructions*
 
+
