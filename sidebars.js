@@ -15,11 +15,13 @@ module.exports = {
       type: 'doc',
       id: 'intro',
       label: 'Welcome',
+      className: 'sidebar-item--with-icon sidebar-item--welcome',
     },
     {
       type: 'category',
       label: 'Aero EBT',
       collapsed: true,
+      className: 'sidebar-item--with-icon sidebar-item--aero-ebt',
       items: [
         'aero-ebt/intro',
         {
@@ -124,6 +126,7 @@ module.exports = {
       type: 'category',
       label: 'EBT Instructor',
       collapsed: true,
+      className: 'sidebar-item--with-icon sidebar-item--ebt-instructor',
       items: [
         'ebt-instructor/intro',
         'ebt-instructor/roadmap',
@@ -253,6 +256,7 @@ module.exports = {
       type: 'category',
       label: 'EBT Scenario Builder',
       collapsed: true,
+      className: 'sidebar-item--with-icon sidebar-item--ebt-scenario',
       items: [
         'ebt-scenario-builder/intro',
         {
@@ -298,6 +302,7 @@ module.exports = {
       type: 'category',
       label: 'Wingman',
       collapsed: false,
+      className: 'sidebar-item--with-icon sidebar-item--wingman',
       items: [
         'wingman/intro',
         {
@@ -343,11 +348,13 @@ module.exports = {
       type: 'doc',
       id: 'terms-of-use',
       label: 'Terms of Use',
+      className: 'sidebar-item--with-icon sidebar-item--terms',
     },
     {
       type: 'doc',
       id: 'disclaimer',
       label: 'Disclaimer',
+      className: 'sidebar-item--with-icon sidebar-item--disclaimer',
     },
   ],
 };

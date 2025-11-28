@@ -17,9 +17,6 @@
   <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="120%" color-interpolation-filters="sRGB">
     <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0C1933" flood-opacity="0.12"/>
   </filter>
-  <marker id="arrow" markerWidth="11" markerHeight="11" refX="9" refY="5.5" orient="auto" markerUnits="strokeWidth">
-    <path d="M0,0 L11,5.5 L0,11 Z" fill="#2B3E65"/>
-  </marker>
 </defs>
 
 <rect width="960" height="1060" fill="url(#bgGradient)"/>
@@ -44,69 +41,97 @@
 <!-- Identity cards -->
 <g transform="translate(110,220)">
   <rect width="210" height="110" rx="18" fill="url(#panelGradient)" stroke="#CBD7F3" stroke-width="1.1" filter="url(#cardShadow)"/>
-  <text x="18" y="36" fill="#112548" font-family="Helvetica, Arial, sans-serif" font-size="17" font-weight="700">Azure Active Directory</text>
-  <text x="18" y="58" fill="#596A88" font-family="Helvetica, Arial, sans-serif" font-size="12">Enterprise SSO • Conditional Access • SCIM</text>
-  <text x="18" y="80" fill="#8798B4" font-family="Helvetica, Arial, sans-serif" font-size="11">MFA, device posture, audit events</text>
+  <text x="18" y="36" fill="#112548" font-family="Helvetica, Arial, sans-serif" font-size="17" font-weight="700">
+    <tspan x="18" dy="0">Azure Active Directory</tspan>
+    <tspan x="18" dy="20" fill="#596A88" font-size="12">Enterprise SSO, Conditional Access, SCIM</tspan>
+    <tspan x="18" dy="16" fill="#8798B4" font-size="11">MFA enforcement and device posture</tspan>
+  </text>
 </g>
 <g transform="translate(375,220)">
   <rect width="210" height="110" rx="18" fill="url(#panelGradient)" stroke="#CBD7F3" stroke-width="1.1" filter="url(#cardShadow)"/>
-  <text x="18" y="36" fill="#112548" font-family="Helvetica, Arial, sans-serif" font-size="17" font-weight="700">Google Workspace</text>
-  <text x="18" y="58" fill="#596A88" font-family="Helvetica, Arial, sans-serif" font-size="12">OIDC federation • domain allowlists</text>
-  <text x="18" y="80" fill="#8798B4" font-family="Helvetica, Arial, sans-serif" font-size="11">Group-driven role mapping</text>
+  <text x="18" y="36" fill="#112548" font-family="Helvetica, Arial, sans-serif" font-size="17" font-weight="700">
+    <tspan x="18" dy="0">Google Workspace</tspan>
+    <tspan x="18" dy="20" fill="#596A88" font-size="12">OIDC federation with domain allowlists</tspan>
+    <tspan x="18" dy="16" fill="#8798B4" font-size="11">Group-driven role provisioning</tspan>
+  </text>
 </g>
 <g transform="translate(640,220)">
   <rect width="210" height="110" rx="18" fill="url(#panelGradient)" stroke="#CBD7F3" stroke-width="1.1" filter="url(#cardShadow)"/>
-  <text x="18" y="36" fill="#112548" font-family="Helvetica, Arial, sans-serif" font-size="17" font-weight="700">Apple Sign-In</text>
-  <text x="18" y="58" fill="#596A88" font-family="Helvetica, Arial, sans-serif" font-size="12">Managed Apple IDs and BYOD policies</text>
-  <text x="18" y="80" fill="#8798B4" font-family="Helvetica, Arial, sans-serif" font-size="11">MDM posture before access</text>
+  <text x="18" y="36" fill="#112548" font-family="Helvetica, Arial, sans-serif" font-size="17" font-weight="700">
+    <tspan x="18" dy="0">Apple Sign-In</tspan>
+    <tspan x="18" dy="20" fill="#596A88" font-size="12">Managed Apple IDs and BYOD policies</tspan>
+    <tspan x="18" dy="16" fill="#8798B4" font-size="11">MDM attestation before access</tspan>
+  </text>
 </g>
 
 <!-- Data cards -->
 <g transform="translate(230,400)">
   <rect width="240" height="110" rx="18" fill="url(#panelGradient)" stroke="#CBD7F3" stroke-width="1.1" filter="url(#cardShadow)"/>
-  <text x="20" y="36" fill="#112548" font-family="Helvetica, Arial, sans-serif" font-size="18" font-weight="700">Option A • Certified feeds</text>
-  <text x="20" y="58" fill="#596A88" font-family="Helvetica, Arial, sans-serif" font-size="12">Jeppesen • Lido • NAVBLUE APIs</text>
-  <text x="20" y="80" fill="#8798B4" font-family="Helvetica, Arial, sans-serif" font-size="11">API keys secured in enterprise vault</text>
+  <text x="20" y="36" fill="#112548" font-family="Helvetica, Arial, sans-serif" font-size="18" font-weight="700">
+    <tspan x="20" dy="0">Option A • Certified feeds</tspan>
+    <tspan x="20" dy="20" fill="#596A88" font-size="12">Jeppesen, Lido, NAVBLUE via API keys</tspan>
+    <tspan x="20" dy="16" fill="#8798B4" font-size="11">Keys stored in enterprise secrets vault</tspan>
+  </text>
 </g>
 <g transform="translate(500,400)">
   <rect width="240" height="110" rx="18" fill="url(#panelGradient)" stroke="#CBD7F3" stroke-width="1.1" filter="url(#cardShadow)"/>
-  <text x="20" y="36" fill="#112548" font-family="Helvetica, Arial, sans-serif" font-size="18" font-weight="700">Option B • Curated internal</text>
-  <text x="20" y="58" fill="#596A88" font-family="Helvetica, Arial, sans-serif" font-size="12">Department-authored datasets</text>
-  <text x="20" y="80" fill="#8798B4" font-family="Helvetica, Arial, sans-serif" font-size="11">Change logs, dual approval, tamper checks</text>
+  <text x="20" y="36" fill="#112548" font-family="Helvetica, Arial, sans-serif" font-size="18" font-weight="700">
+    <tspan x="20" dy="0">Option B • Curated internal</tspan>
+    <tspan x="20" dy="20" fill="#596A88" font-size="12">Department-authored datasets and SOPs</tspan>
+    <tspan x="20" dy="16" fill="#8798B4" font-size="11">Dual approval and tamper-evident logs</tspan>
+  </text>
 </g>
 
 <!-- Shared services cards -->
 <g transform="translate(110,740)">
   <rect width="210" height="110" rx="18" fill="url(#panelGradient)" stroke="#CBD7F3" stroke-width="1.1" filter="url(#cardShadow)"/>
-  <text x="18" y="36" fill="#112548" font-family="Helvetica, Arial, sans-serif" font-size="17" font-weight="700">API Gateway &amp; WAF</text>
-  <text x="18" y="58" fill="#596A88" font-family="Helvetica, Arial, sans-serif" font-size="12">mTLS, throttling, OWASP controls</text>
-  <text x="18" y="80" fill="#8798B4" font-family="Helvetica, Arial, sans-serif" font-size="11">Aligned to ISO 27001 A.13</text>
+  <text x="18" y="36" fill="#112548" font-family="Helvetica, Arial, sans-serif" font-size="17" font-weight="700">
+    <tspan x="18" dy="0">API Gateway &amp; WAF</tspan>
+    <tspan x="18" dy="20" fill="#596A88" font-size="12">mTLS termination, throttling, OWASP rules</tspan>
+    <tspan x="18" dy="16" fill="#8798B4" font-size="11">Compliance with ISO 27001 A.13</tspan>
+  </text>
 </g>
 <g transform="translate(375,740)">
   <rect width="210" height="110" rx="18" fill="url(#panelGradient)" stroke="#CBD7F3" stroke-width="1.1" filter="url(#cardShadow)"/>
-  <text x="18" y="36" fill="#112548" font-family="Helvetica, Arial, sans-serif" font-size="17" font-weight="700">Secrets Management</text>
-  <text x="18" y="58" fill="#596A88" font-family="Helvetica, Arial, sans-serif" font-size="12">Azure Key Vault • HashiCorp Vault</text>
-  <text x="18" y="80" fill="#8798B4" font-family="Helvetica, Arial, sans-serif" font-size="11">Automated rotation • least privilege</text>
+  <text x="18" y="36" fill="#112548" font-family="Helvetica, Arial, sans-serif" font-size="17" font-weight="700">
+    <tspan x="18" dy="0">Secrets Management</tspan>
+    <tspan x="18" dy="20" fill="#596A88" font-size="12">Azure Key Vault and HashiCorp Vault</tspan>
+    <tspan x="18" dy="16" fill="#8798B4" font-size="11">Automated rotation, least privilege</tspan>
+  </text>
 </g>
 <g transform="translate(640,740)">
   <rect width="210" height="110" rx="18" fill="url(#panelGradient)" stroke="#CBD7F3" stroke-width="1.1" filter="url(#cardShadow)"/>
-  <text x="18" y="36" fill="#112548" font-family="Helvetica, Arial, sans-serif" font-size="17" font-weight="700">Monitoring &amp; Response</text>
-  <text x="18" y="58" fill="#596A88" font-family="Helvetica, Arial, sans-serif" font-size="12">SIEM correlation • 24/7 alerting</text>
-  <text x="18" y="80" fill="#8798B4" font-family="Helvetica, Arial, sans-serif" font-size="11">Incident runbooks • ISO 27001 A.16</text>
+  <text x="18" y="36" fill="#112548" font-family="Helvetica, Arial, sans-serif" font-size="17" font-weight="700">
+    <tspan x="18" dy="0">Monitoring &amp; Response</tspan>
+    <tspan x="18" dy="20" fill="#596A88" font-size="12">SIEM correlation with 24/7 alerting</tspan>
+    <tspan x="18" dy="16" fill="#8798B4" font-size="11">Incident runbooks per ISO 27001 A.16</tspan>
+  </text>
 </g>
 
 <!-- Data platform cards -->
 <g transform="translate(240,920)">
   <rect width="230" height="110" rx="18" fill="url(#panelGradient)" stroke="#CBD7F3" stroke-width="1.1" filter="url(#cardShadow)"/>
-  <text x="20" y="36" fill="#112548" font-family="Helvetica, Arial, sans-serif" font-size="17" font-weight="700">Couchbase Cluster</text>
-  <text x="20" y="58" fill="#596A88" font-family="Helvetica, Arial, sans-serif" font-size="12">Scenario content, instructor notes, analytics</text>
-  <text x="20" y="80" fill="#8798B4" font-family="Helvetica, Arial, sans-serif" font-size="11">Encryption at rest • cross-region replication</text>
+  <text x="20" y="36" fill="#112548" font-family="Helvetica, Arial, sans-serif" font-size="17" font-weight="700">
+    <tspan x="20" dy="0">Couchbase Cluster</tspan>
+    <tspan x="20" dy="20" fill="#596A88" font-size="12">Scenario content, instructor notes, analytics</tspan>
+    <tspan x="20" dy="16" fill="#8798B4" font-size="11">Encryption at rest with replication</tspan>
+  </text>
 </g>
 <g transform="translate(520,920)">
   <rect width="230" height="110" rx="18" fill="url(#panelGradient)" stroke="#CBD7F3" stroke-width="1.1" filter="url(#cardShadow)"/>
-  <text x="20" y="36" fill="#112548" font-family="Helvetica, Arial, sans-serif" font-size="17" font-weight="700">SkyDynamics Managed</text>
-  <text x="20" y="58" fill="#596A88" font-family="Helvetica, Arial, sans-serif" font-size="12">ISO 27001 • SOC 2 • GDPR hosting</text>
-  <text x="20" y="80" fill="#8798B4" font-family="Helvetica, Arial, sans-serif" font-size="11">Operations, resilience, support</text>
+  <text x="20" y="36" fill="#112548" font-family="Helvetica, Arial, sans-serif" font-size="17" font-weight="700">
+    <tspan x="20" dy="0">SkyDynamics Managed</tspan>
+    <tspan x="20" dy="20" fill="#596A88" font-size="12">ISO 27001, SOC 2, GDPR certified hosting</tspan>
+    <tspan x="20" dy="16" fill="#8798B4" font-size="11">Operational support and resilience</tspan>
+  </text>
+</g>
+<g transform="translate(760,920)">
+  <rect width="140" height="110" rx="18" fill="#FFFFFF" stroke="#CBD7F3" stroke-width="1.1" filter="url(#cardShadow)"/>
+  <text x="18" y="36" fill="#112548" font-family="Helvetica, Arial, sans-serif" font-size="16" font-weight="700">
+    <tspan x="18" dy="0">Self-Hosted</tspan>
+    <tspan x="18" dy="20" fill="#596A88" font-size="11">Customer data center with consulting</tspan>
+    <tspan x="18" dy="16" fill="#8798B4" font-size="11">Tailored compliance controls</tspan>
+  </text>
 </g>
 
 <!-- Core application hub -->
@@ -115,31 +140,6 @@
   <text x="85" y="70" text-anchor="middle" fill="#FFFFFF" font-family="Helvetica, Arial, sans-serif" font-size="20" font-weight="700">EBT Instructor</text>
   <text x="85" y="100" text-anchor="middle" fill="#E3ECFF" font-family="Helvetica, Arial, sans-serif" font-size="14">iOS Client Runtime</text>
   <text x="85" y="128" text-anchor="middle" fill="#C9D8FF" font-family="Helvetica, Arial, sans-serif" font-size="11">Secure workflows • assessment logic • offline cache</text>
-</g>
-
-<!-- Connectors -->
-<g stroke="#2B3E65" stroke-width="2.4" fill="none" marker-end="url(#arrow)" stroke-linecap="round" stroke-linejoin="round">
-  <!-- Identity to core -->
-  <path d="M215 330 C 270 380 340 460 395 580"/>
-  <path d="M480 330 C 480 400 480 460 480 565"/>
-  <path d="M745 330 C 690 380 620 460 565 580"/>
-
-  <!-- Data to core -->
-  <path d="M360 510 C 390 540 410 550 430 565"/>
-  <path d="M630 510 C 600 540 560 560 530 575"/>
-
-  <!-- Core to services -->
-  <path d="M395 660 C 340 700 290 730 215 740"/>
-  <path d="M480 660 C 480 700 480 710 480 740"/>
-  <path d="M565 660 C 620 700 670 730 745 740"/>
-
-  <!-- Core to platforms -->
-  <path d="M430 690 C 390 750 360 790 280 920"/>
-  <path d="M480 690 C 480 760 480 820 480 920"/>
-  <path d="M530 690 C 570 760 610 820 635 920"/>
-
-  <!-- Governance feedback -->
-  <path d="M760 820 C 820 870 760 920 680 940"/>
 </g>
 
 <!-- Compliance note -->
