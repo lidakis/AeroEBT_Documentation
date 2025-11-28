@@ -160,7 +160,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} SkyDynamics. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} SkyDynamics.`,
       },
       prism: {
         theme: lightCodeTheme,
