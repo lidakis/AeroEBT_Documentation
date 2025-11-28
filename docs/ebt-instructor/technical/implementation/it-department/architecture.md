@@ -13,7 +13,7 @@ This report provides IT stakeholders with a consolidated view of how the `EBT In
 ## Architecture Summary
 
 - **Core application**: `EBT Instructor` native iOS client acting as the secure presentation layer for instructors.
-- **Access control**: Enterprise single sign-on (SSO) via Azure AD, Google Workspace, or Sign in with Apple, federated through centralized identity governance.
+- **Access control**: Enterprise single sign-on (SSO) via Azure AD or Sign in with Apple, federated through centralized identity governance.
 - **Data enablement options**: Either integrate with certified aeronautical data providers (Jeppesen, Lido, etc.) or manage curated data internally when 3rd-party data is not approved.
 - **Data storage**: Couchbase cluster for EBT scenario content, supplemented by SkyDynamics managed services or customer-hosted infrastructure.
 - **Protection & compliance**: Transport security, hardened endpoints, and operational controls mapped to ISO/IEC 27001 Annex A.
@@ -25,7 +25,6 @@ This report provides IT stakeholders with a consolidated view of how the `EBT In
 | Touchpoint | Purpose | Notes |
 | --- | --- | --- |
 | Azure Active Directory | Primary SSO, conditional access, SCIM provisioning | See [Azure AD Integration](./azure-ad-integration) |
-| Google Workspace | OAuth 2.0/OIDC sign-in for airlines using Google identity | Supports domain-restricted access |
 | Apple Sign-In | Consumer-style Sign in with Apple for BYOD instructors | Enforce managed Apple IDs where possible |
 
 **Key design considerations**
