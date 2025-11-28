@@ -37,9 +37,7 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl: 'https://github.com/lidakis/AeroEBT_Documentation/tree/main/',
+          // Removed editUrl to hide the "Edit this page" GitHub links.
           // Versioning configuration
           lastVersion: '0.21.1',
           versions: {
@@ -54,8 +52,6 @@ const config = {
         },
         blog: {
           showReadingTime: true,
-          // Please change this to your repo.
-          editUrl: 'https://github.com/lidakis/AeroEBT_Documentation/tree/main/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -111,12 +107,6 @@ const config = {
             position: 'right',
             className: 'navbar-item--with-icon navbar-item--skydynamics',
           },
-          {
-            href: 'https://github.com/lidakis',
-            label: 'GitHub',
-            position: 'right',
-            className: 'navbar-item--with-icon navbar-item--github',
-          },
         ],
       },
       footer: {
@@ -166,15 +156,6 @@ const config = {
               {
                 label: 'Disclaimer',
                 to: '/docs/disclaimer',
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'GitHub',
-                href: 'https://github.com/lidakis',
               },
             ],
           },
