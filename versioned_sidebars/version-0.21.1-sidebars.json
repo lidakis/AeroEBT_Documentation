@@ -212,6 +212,11 @@
             "ebt-instructor/b2b/overview",
             "ebt-instructor/b2b/setup"
           ]
+        },
+        {
+          "type": "doc",
+          "id": "ebt-instructor/privacy-policy",
+          "label": "Privacy Policy"
         }
       ]
     },

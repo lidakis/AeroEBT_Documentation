@@ -250,6 +250,12 @@ module.exports = {
             'ebt-instructor/b2b/setup',
           ],
         },
+        {
+          type: 'doc',
+          id: 'ebt-instructor/privacy-policy',
+          label: 'Privacy Policy',
+          className: 'sidebar-item--with-icon sidebar-item--privacy',
+        },
       ],
     },
     {
