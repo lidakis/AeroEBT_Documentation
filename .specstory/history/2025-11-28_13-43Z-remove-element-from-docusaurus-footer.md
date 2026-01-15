@@ -925,3 +925,273 @@ _**Agent (model default, mode Agent)**_
 
 ---
 
+
+Checking that everything is complete:
+
+
+---
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_cmd">
+<details><summary>Tool use: **run_terminal_cmd** • Run command: cp /Users/lidakis/WebstormProjects/AeroEBT_Documentation/docs/ebt-instructor/user-guides/designer.md /Users/lidakis/WebstormProjects/AeroEBT_Documentation/versioned_docs/version-0.21.1/ebt-instructor/user-guides/designer.md</summary>
+
+```bash
+cp /Users/lidakis/WebstormProjects/AeroEBT_Documentation/docs/ebt-instructor/user-guides/designer.md /Users/lidakis/WebstormProjects/AeroEBT_Documentation/versioned_docs/version-0.21.1/ebt-instructor/user-guides/designer.md
+```
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="generic" data-tool-name="list_dir">
+<details>
+            <summary>Tool use: **list_dir** • Listed directory, 0 results</summary>
+        
+No results found
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="generic" data-tool-name="list_dir">
+<details>
+            <summary>Tool use: **list_dir** • Listed directory, 0 results</summary>
+        
+No results found
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="generic" data-tool-name="read_lints">
+<details>
+          <summary>Tool use: **read_lints** • Read lints for 4 files</summary>
+      
+Lint paths:
+
+- `sidebars.js`
+- `versioned_sidebars/version-0.21.1-sidebars.json`
+- `docs/ebt-instructor/user-guides/roles.md`
+- `docs/ebt-instructor/user-guides/designer.md`
+
+Lint results
+
+
+**No lint errors found**
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="search" data-tool-name="grep">
+<details>
+<summary>Tool use: **grep** • Grep for "roles|designer" in "sidebars.js" • 2 matches</summary>
+
+Output mode: content
+
+
+| File | Content | Line |
+|------|------|------|
+| `sidebars.js` | `'ebt-instructor/user-guides/roles',` | L151 |
+| `sidebars.js` | `'ebt-instructor/user-guides/designer',` | L155 |
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="search" data-tool-name="grep">
+<details>
+<summary>Tool use: **grep** • Grep for "roles|designer" in "versioned_sidebars/version-0.21.1-sidebars.json" • 2 matches</summary>
+
+Output mode: content
+
+
+| File | Content | Line |
+|------|------|------|
+| `versioned_sidebars/version-0.21.1-sidebars.json` | `"ebt-instructor/user-guides/roles",` | L124 |
+| `versioned_sidebars/version-0.21.1-sidebars.json` | `"ebt-instructor/user-guides/designer"` | L128 |
+
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+Verifying content coverage:
+
+
+---
+
+<tool-use data-tool-type="search" data-tool-name="grep">
+<details>
+<summary>Tool use: **grep** • Grep for "auto-suggest|auto-complete|synchroniz|offline|last edit wins" in "docs/ebt-instructor/user-guides/designer.md" • 22 matches</summary>
+
+Output mode: content
+
+
+| File | Content | Line |
+|------|------|------|
+| `docs/ebt-instructor/user-guides/designer.md` | `### Auto-Suggest and Auto-Complete` | L78 |
+| `docs/ebt-instructor/user-guides/designer.md` | `All input fields in the scenario editing interface feature intelligent auto-suggest and auto-complete functionality:` | L80 |
+| `docs/ebt-instructor/user-guides/designer.md` | `- **Flight Phases**: Auto-suggestions based on standard phase definitions` | L82 |
+| `docs/ebt-instructor/user-guides/designer.md` | `- **Flight Plans**: Auto-complete for waypoints, routes, and navigation data` | L83 |
+| `docs/ebt-instructor/user-guides/designer.md` | `- **Airports**: Auto-suggestions for ICAO/IATA codes and airport information` | L84 |
+| `docs/ebt-instructor/user-guides/designer.md` | `- **Routes**: Auto-complete for standard routes and airways` | L85 |
+| `docs/ebt-instructor/user-guides/designer.md` | `- **Systems**: Auto-suggestions for aircraft systems and components` | L86 |
+| `docs/ebt-instructor/user-guides/designer.md` | `- **Competencies**: Auto-complete for competency codes and descriptions` | L87 |
+| `docs/ebt-instructor/user-guides/designer.md` | `- **Procedures**: Auto-suggestions for standard operating procedures` | L88 |
+| `docs/ebt-instructor/user-guides/designer.md` | `## Synchronization and Collaboration` | L165 |
+| `docs/ebt-instructor/user-guides/designer.md` | `### Online Synchronization` | L167 |
+| `docs/ebt-instructor/user-guides/designer.md` | `1. **Immediate Sync**: Changes are synchronized to the online database immediately if an internet connection is available` | L171 |
+| `docs/ebt-instructor/user-guides/designer.md` | `2. **User Visibility**: Instructors and Trainees can see the changes as soon as they are saved and synchronized` | L172 |
+| `docs/ebt-instructor/user-guides/designer.md` | `### Offline Mode` | L175 |
+| `docs/ebt-instructor/user-guides/designer.md` | `2. **Automatic Sync**: When an internet connection is restored, all pending changes are automatically synchronized` | L180 |
+| `docs/ebt-instructor/user-guides/designer.md` | `3. **Conflict Resolution**: The system uses "last edit wins" strategy for conflict resolution` | L181 |
+| `docs/ebt-instructor/user-guides/designer.md` | `- Changes are synchronized in real-time when possible` | L189 |
+| `docs/ebt-instructor/user-guides/designer.md` | `- **Last Edit Wins**: The most recent save takes precedence` | L190 |
+| `docs/ebt-instructor/user-guides/designer.md` | `2. **Use Auto-Complete**: Leverage auto-suggest features to ensure consistency` | L208 |
+| `docs/ebt-instructor/user-guides/designer.md` | `7. **Check Sync Status**: Verify synchronization status, especially after offline work` | L213 |
+| `docs/ebt-instructor/user-guides/designer.md` | `- **Manual Sync**: Use the sync button to manually trigger synchronization` | L221 |
+| `docs/ebt-instructor/user-guides/designer.md` | `### Auto-Complete Not Working` | L224 |
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="search" data-tool-name="grep">
+<details>
+<summary>Tool use: **grep** • Grep for "instructor|designer|trainee" in "docs/ebt-instructor/user-guides/roles.md" • 11 matches</summary>
+
+Output mode: content
+
+
+| File | Content | Line |
+|------|------|------|
+| `docs/ebt-instructor/user-guides/roles.md` | `# User Roles in EBT Instructor` | L5 |
+| `docs/ebt-instructor/user-guides/roles.md` | `EBT Instructor supports three distinct user roles, each with specific permissions and capabilities tailored to their responsibilities in the training workflow.` | L7 |
+| `docs/ebt-instructor/user-guides/roles.md` | `### Designer` | L11 |
+| `docs/ebt-instructor/user-guides/roles.md` | `### Instructor` | L25 |
+| `docs/ebt-instructor/user-guides/roles.md` | `**Purpose**: Conduct training sessions and assess trainee performance.` | L27 |
+| `docs/ebt-instructor/user-guides/roles.md` | `- Conduct training sessions with trainees` | L31 |
+| `docs/ebt-instructor/user-guides/roles.md` | `- Monitor trainee performance in real-time` | L32 |
+| `docs/ebt-instructor/user-guides/roles.md` | `- Provide feedback to trainees` | L35 |
+| `docs/ebt-instructor/user-guides/roles.md` | `### Trainee` | L39 |
+| `docs/ebt-instructor/user-guides/roles.md` | `\| Feature \| Designer \| Instructor \| Trainee \|` | L53 |
+| `docs/ebt-instructor/user-guides/roles.md` | `*For more information about specific role capabilities, see the [Designer Guide](./designer), [Instructor Guide](./user-guide), or contact your administrator.*` | L70 |
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: /Users/lidakis/WebstormProjects/AeroEBT_Documentation/docs/ebt-instructor/user-guides/designer.md</summary>
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+Verifying the final structure:
+
+
+---
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_cmd">
+<details><summary>Tool use: **run_terminal_cmd** • Run command: ls -la /Users/lidakis/WebstormProjects/AeroEBT_Documentation/docs/ebt-instructor/user-guides/ && echo "---" && ls -la /Users/lidakis/WebstormProjects/AeroEBT_Documentation/versioned_docs/version-0.21.1/ebt-instructor/user-guides/</summary>
+
+```bash
+ls -la /Users/lidakis/WebstormProjects/AeroEBT_Documentation/docs/ebt-instructor/user-guides/ && echo "---" && ls -la /Users/lidakis/WebstormProjects/AeroEBT_Documentation/versioned_docs/version-0.21.1/ebt-instructor/user-guides/
+```
+
+```
+total 56
+drwxr-xr-x   7 lidakis  staff   224 Jan 15 13:42 .
+drwxr-xr-x  17 lidakis  staff   544 Jan 15 11:57 ..
+-rw-r--r--   1 lidakis  staff  9113 Jan 15 14:28 designer.md
+-rw-r--r--   1 lidakis  staff  1179 Nov  3 13:22 features.md
+-rw-r--r--   1 lidakis  staff  1554 Nov  3 13:22 getting-started.md
+-rw-r--r--   1 lidakis  staff  2338 Jan 15 14:28 roles.md
+-rw-r--r--   1 lidakis  staff  1485 Nov  3 13:22 user-guide.md
+---
+total 56
+drwxr-xr-x   7 lidakis  staff   224 Jan 15 14:30 .
+drwxr-xr-x  14 lidakis  staff   448 Jan 15 11:57 ..
+-rw-r--r--   1 lidakis  staff  9113 Jan 15 14:30 designer.md
+-rw-r--r--   1 lidakis  staff  1179 Nov  3 13:22 features.md
+-rw-r--r--   1 lidakis  staff  1554 Nov  3 13:22 getting-started.md
+-rw-r--r--   1 lidakis  staff  2338 Jan 15 14:28 roles.md
+-rw-r--r--   1 lidakis  staff  1485 Nov  3 13:22 user-guide.md
+
+```
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: /Users/lidakis/WebstormProjects/AeroEBT_Documentation/sidebars.js</summary>
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+## Completed tasks
+
+1. Created `roles.md` — covers three roles:
+   - Designer (full editing capabilities)
+   - Instructor (session management and assessments)
+   - Trainee (read-only access to assigned scenarios)
+
+2. Created `designer.md` — Designer guide with:
+   - 4-step scenario creation workflow (General, Init Sim, Flight Phases, Description)
+   - Auto-suggest/auto-complete for: Flight Phases, Flight Plans, Airports, Routes, Systems, Competencies, Procedures
+   - Synchronization details:
+     - Online: immediate sync when saved; instructors/trainees see changes when connection is present
+     - Offline: local storage with automatic sync when connection is restored
+   - Multi-designer collaboration: "last edit wins" strategy
+   - Scenario organization according to company instructions
+   - References to all 9 screenshots provided
+
+3. Updated sidebars:
+   - Main sidebar (`sidebars.js`) — added roles and designer pages
+   - Versioned sidebar (`version-0.21.1-sidebars.json`) — added both pages
+
+4. Files in place:
+   - Main docs: `/docs/ebt-instructor/user-guides/roles.md` and `designer.md`
+   - Versioned docs: `/versioned_docs/version-0.21.1/ebt-instructor/user-guides/roles.md` and `designer.md`
+
+5. No linting errors
+
+## Note about images
+
+The designer.md file references images (e.g., `./designer-step1.png`). Add the actual screenshot files to:
+- `/static/img/ebt-instructor/` or
+- `/docs/ebt-instructor/user-guides/` (for relative paths)
+
+Then update the image paths in `designer.md` to match the actual file locations.
+
+Everything else is complete and ready to deploy.
+
+---
+
