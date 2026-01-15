@@ -137,7 +137,6 @@ _**Agent (model default, mode Agent)**_
 
 ---
 
-
 Checking the docs structure and sidebars to place the privacy policy in the ebt-instructor docs and versioned docs.
 
 
@@ -183,7 +182,6 @@ No results found
 
 ---
 
-
 Moving the privacy policy to the ebt-instructor docs and adding it to the sidebars. Checking the current file location first:
 
 
@@ -201,7 +199,6 @@ Moving the privacy policy to the ebt-instructor docs and adding it to the sideba
 
 ---
 
-
 Moving the privacy policy to the ebt-instructor docs and updating the sidebars:
 
 
@@ -218,7 +215,6 @@ Moving the privacy policy to the ebt-instructor docs and updating the sidebars:
 
 
 ---
-
 
 Copying the privacy policy to the ebt-instructor docs and versioned docs, then updating the sidebars:
 
@@ -315,7 +311,6 @@ Explanation: undefined
 
 ---
 
-
 Checking for linting errors:
 
 
@@ -343,7 +338,6 @@ Lint results
 
 ---
 
-
 Verifying the files were created correctly:
 
 
@@ -370,7 +364,6 @@ ls -la /Users/lidakis/WebstormProjects/AeroEBT_Documentation/docs/ebt-instructor
 
 ---
 
-
 ## Changes Made:
 
 1. **Moved the privacy policy file:**
@@ -391,6 +384,544 @@ The privacy policy is now:
 After you build and deploy the documentation, the privacy policy will be accessible at:
 - `/docs/ebt-instructor/privacy-policy` (current version)
 - `/docs/0.21.1/ebt-instructor/privacy-policy` (versioned)
+
+---
+
+_**User (2026-01-15 11:36Z)**_
+
+make a new page under EBT Instructor > User  Guide > Designer add 3 roles  for instructor , designer , and trainee, add a page into designer with all attached screenshots , add add information that input fields when editing scenario (this is only for designer ) regarding flight phase flight plan , airports route systems , competencies etc are also auto suggest auto complete , once pressed saved the information is synchronizing online . and the users are able to see the changes instructors and trainnees once saved and internet connection is present , if there is no internet connection the new infromation will be synced when connection is available. always last edit wind if more than one designers designated in the company. the scenario information in editing mode has been arranged in convinient way according to the company instructions .
+
+---
+
+_**Agent (model default, mode Agent)**_
+
+
+
+---
+
+
+Creating a Designer page under EBT Instructor > User Guides. Checking the current structure:
+
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: /Users/lidakis/WebstormProjects/AeroEBT_Documentation/docs/ebt-instructor/user-guides/user-guide.md</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="generic" data-tool-name="list_dir">
+<details>
+            <summary>Tool use: **list_dir** • Listed directory, 0 results</summary>
+        
+No results found
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: /Users/lidakis/WebstormProjects/AeroEBT_Documentation/sidebars.js</summary>
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+Reviewing existing user guide pages to understand the format:
+
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: /Users/lidakis/WebstormProjects/AeroEBT_Documentation/docs/ebt-instructor/user-guides/getting-started.md</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: /Users/lidakis/WebstormProjects/AeroEBT_Documentation/docs/ebt-instructor/user-guides/features.md</summary>
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+Creating the roles page and the designer guide page:
+
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="write">
+
+<details><summary>Tool use: **write** • Edit file: /Users/lidakis/WebstormProjects/AeroEBT_Documentation/docs/ebt-instructor/user-guides/roles.md</summary>
+
+**Chunk 1**
+Lines added: 71, lines removed: 1
+
+```diff
+@@ -1,1 +1,71 @@
+- 
++ ---
++ sidebar_position: 1
++ ---
++ 
++ # User Roles in EBT Instructor
++ 
++ EBT Instructor supports three distinct user roles, each with specific permissions and capabilities tailored to their responsibilities in the training workflow.
++ 
++ ## Roles Overview
++ 
++ ### Designer
++ 
++ **Purpose**: Create, edit, and manage training scenarios and configurations.
++ 
++ **Key Responsibilities**:
++ - Create and edit training scenarios
++ - Configure flight phases, flight plans, and routes
++ - Set up airport information and weather data
++ - Define competencies, systems, and procedures
++ - Manage scenario content and descriptions
++ - Organize scenarios according to company requirements
++ 
++ **Access Level**: Full editing capabilities for scenario creation and modification.
++ 
++ ### Instructor
++ 
++ **Purpose**: Conduct training sessions and assess trainee performance.
++ 
++ **Key Responsibilities**:
++ - View and access assigned scenarios
++ - Conduct training sessions with trainees
++ - Monitor trainee performance in real-time
++ - Record observations and evidence
++ - Complete assessments and evaluations
++ - Provide feedback to trainees
++ 
++ **Access Level**: Read access to scenarios, full access to session management and assessment tools.
++ 
++ ### Trainee
++ 
++ **Purpose**: Participate in training sessions and view assigned scenarios.
++ 
++ **Key Responsibilities**:
++ - View assigned training scenarios
++ - Participate in training sessions
++ - Access session feedback and assessments
++ - Review training history and progress
++ 
++ **Access Level**: Read-only access to assigned scenarios and personal training records.
++ 
++ ## Role Permissions Summary
++ 
++ | Feature | Designer | Instructor | Trainee |
++ |---------|----------|------------|---------|
++ | Create/Edit Scenarios | ✅ | ❌ | ❌ |
++ | View Scenarios | ✅ | ✅ | ✅ (Assigned only) |
++ | Conduct Sessions | ❌ | ✅ | ❌ |
++ | Participate in Sessions | ❌ | ❌ | ✅ |
++ | Create Assessments | ❌ | ✅ | ❌ |
++ | View Assessments | ✅ | ✅ | ✅ (Own only) |
++ | Manage Flight Plans | ✅ | ❌ | ❌ |
++ | Configure Competencies | ✅ | ❌ | ❌ |
++ 
++ ## Role Selection
++ 
++ Your role is assigned by your organization's administrator based on your position and responsibilities. You cannot change your role independently.
++ 
++ ---
++ 
++ *For more information about specific role capabilities, see the [Designer Guide](./designer), [Instructor Guide](./user-guide), or contact your administrator.*
++ 
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="write">
+
+<details><summary>Tool use: **write** • Edit file: /Users/lidakis/WebstormProjects/AeroEBT_Documentation/docs/ebt-instructor/user-guides/designer.md</summary>
+
+**Chunk 1**
+Lines added: 239, lines removed: 1
+
+```diff
+@@ -1,1 +1,239 @@
+- 
++ ---
++ sidebar_position: 5
++ ---
++ 
++ # Designer Guide
++ 
++ The Designer role in EBT Instructor provides comprehensive tools for creating and managing training scenarios. Designers have exclusive access to scenario editing capabilities, allowing them to configure all aspects of training scenarios according to company requirements.
++ 
++ ## Overview
++ 
++ As a Designer, you can create, edit, and manage training scenarios that will be used by Instructors and Trainees. The scenario editing interface is organized in a convenient, step-by-step workflow that follows your company's specific instructions and requirements.
++ 
++ ## Scenario Creation Workflow
++ 
++ The scenario creation process is divided into four main steps:
++ 
++ ### Step 1: General Information
++ 
++ Configure the basic scenario parameters:
++ 
++ - **Scenario Name**: Unique identifier for the scenario
++ - **Scenario Type**: Select from available types (e.g., "SBT - Scenario Based Phase")
++ - **Duration**: Set the total scenario duration using the slider (e.g., 02:00)
++ - **Session Periods**: Configure the number of session periods (adjustable with +/- buttons)
++ - **Session Parts**: Set the number of session parts (adjustable with +/- buttons)
++ - **Validity Period**: Select the validity period (e.g., 2026) and period segment (A, B, C)
++ - **EBT Compliant**: Toggle to mark scenario as EBT compliant
++ - **Aircraft Information**: Select aircraft type and variant (e.g., A320, A32nx)
++ - **Flight Data**: Enter flight identifier (e.g., AEE101)
++ 
++ ![Step 1: General Information](./designer-step1.png)
++ 
++ ### Step 2: Initial Simulation Setup
++ 
++ Configure the initial simulation parameters:
++ 
++ - **V-Speeds**: Set V1, VR, and V2 speeds
++ - **Weather Information**: 
++   - Initial weather METAR
++   - Area weather forecasts (SIGMET/PIREP)
++ - **MEL (Minimum Equipment List)**: Enter MEL items
++ - **NOTAMs**: Add relevant NOTAMs
++ - **ATC Clearance**: Enter ATC clearance instructions
++ - **General Notes**: Additional initialization notes
++ 
++ ![Step 2: Initial Simulation Setup](./designer-step2.png)
++ 
++ ### Step 3: Flight Phases
++ 
++ Define flight phases and their configurations:
++ 
++ - **Phase Selection**: Select flight phase (e.g., GND - Ground)
++ - **Duration**: Set phase duration using slider (e.g., 00:55)
++ - **Test Information**: Enter test identifier
++ - **Test Remarks**: Add remarks for the phase
++ - **Content**: 
++   - Filter by content type: All, Abnormal, Normal, Supplementary
++   - Add scenario content and descriptions
++   - Include specific flight events and procedures
++ - **Observable Items**: 
++   - Define checklist observations
++   - Add competency markers (e.g., EDA, CAM)
++ 
++ ![Step 3: Flight Phases](./designer-step3.png)
++ 
++ ### Step 4: Description
++ 
++ Add detailed scenario descriptions:
++ 
++ - **Sections**: Create multiple description sections
++ - **Section Content**: Add training notes and instructions for instructors
++ - **Section Management**: Add or delete sections as needed
++ 
++ ![Step 4: Description](./designer-step4.png)
++ 
++ ## Advanced Features
++ 
++ ### Auto-Suggest and Auto-Complete
++ 
++ All input fields in the scenario editing interface feature intelligent auto-suggest and auto-complete functionality:
++ 
++ - **Flight Phases**: Auto-suggestions based on standard phase definitions
++ - **Flight Plans**: Auto-complete for waypoints, routes, and navigation data
++ - **Airports**: Auto-suggestions for ICAO/IATA codes and airport information
++ - **Routes**: Auto-complete for standard routes and airways
++ - **Systems**: Auto-suggestions for aircraft systems and components
++ - **Competencies**: Auto-complete for competency codes and descriptions
++ - **Procedures**: Auto-suggestions for standard operating procedures
++ 
++ This feature significantly speeds up scenario creation and ensures consistency with company standards and aviation databases.
++ 
++ ### Scenario View and Management
++ 
++ The main scenario view provides comprehensive access to all scenario components:
++ 
++ #### Left Panel - Scenario Details
++ 
++ - **Init Sim Tab**: View and edit initial simulation parameters
++ - **Scenario Tab**: Access flight phase timeline and content
++ - **Flight Plan Tab**: View and edit flight plan details
++ - **Description Tab**: Access scenario descriptions
++ 
++ #### Right Panel - Additional Information
++ 
++ - **General Tab**: 
++   - Briefing items
++   - Competencies
++   - Systems
++   - Tasks
++   - Procedures
++ - **Airports Tab**: 
++   - Departure airport details
++   - Arrival airport details
++   - Take-off alternates
++   - Area weather information
++ - **Map Tab**: Visual representation of flight route
++ - **Files Tab**: Attached files and documents
++ 
++ ![Scenario View](./designer-scenario-view.png)
++ 
++ ### Flight Plan Configuration
++ 
++ Configure detailed flight plan information:
++ 
++ - **Flight Plan**: Enter complete flight plan with waypoints
++ - **Route**: Define route segments and airways
++ - **Initial Position**: Set starting position (e.g., RWY27 HOLDING POINT)
++ - **Aircraft Initialization**: 
++   - Zero Fuel Weight (ZFW)
++   - Fuel On Board (FOB)
++   - Configuration
++   - Flex temperature
++   - V-speeds
++ 
++ ![Flight Plan View](./designer-flight-plan.png)
++ 
++ ### Airport Information
++ 
++ Access comprehensive airport data:
++ 
++ - **Search**: Filter airports by ICAO or IATA codes
++ - **Departure Airport**: 
++   - Runway information
++   - Airport details
++   - Weather conditions
++ - **Arrival Airport**: 
++   - Runway information
++   - Approach categories
++   - Airport details
++ - **Take-Off Alternates**: Configure alternate airports
++ 
++ ![Airports View](./designer-airports.png)
++ 
++ ### Map Visualization
++ 
++ Visual representation of the flight route:
++ 
++ - **Geographic Map**: Interactive map showing flight path
++ - **Airport Markers**: Visual indicators for departure and arrival airports
++ - **Route Visualization**: Green line connecting origin and destination
++ - **Geographic Features**: Labels for relevant geographic areas
++ 
++ ![Map View](./designer-map.png)
++ 
++ ## Synchronization and Collaboration
++ 
++ ### Online Synchronization
++ 
++ When you save changes to a scenario:
++ 
++ 1. **Immediate Sync**: Changes are synchronized to the online database immediately if an internet connection is available
++ 2. **User Visibility**: Instructors and Trainees can see the changes as soon as they are saved and synchronized
++ 3. **Real-Time Updates**: All users with access to the scenario will see updates in real-time
++ 
++ ### Offline Mode
++ 
++ If no internet connection is available:
++ 
++ 1. **Local Storage**: Changes are saved locally on your device
++ 2. **Automatic Sync**: When an internet connection is restored, all pending changes are automatically synchronized
++ 3. **Conflict Resolution**: The system uses "last edit wins" strategy for conflict resolution
++ 
++ ### Multi-Designer Collaboration
++ 
++ When multiple designers are designated in your company:
++ 
++ - **Concurrent Editing**: Multiple designers can work on different scenarios simultaneously
++ - **Same Scenario Editing**: If multiple designers edit the same scenario:
++   - Changes are synchronized in real-time when possible
++   - **Last Edit Wins**: The most recent save takes precedence
++   - System notifications alert you if another designer has made changes
++ - **Best Practice**: Coordinate with other designers or use scenario locking features when available
++ 
++ ## Scenario Organization
++ 
++ Scenarios are organized according to your company's specific instructions:
++ 
++ - **Grouping**: Scenarios are grouped by validity period (e.g., 2026)
++ - **Categorization**: Scenarios are categorized by period segments (A, B, C)
++ - **Naming Convention**: Follow company naming standards (e.g., "Demo 2026-1", "Test scenario 2")
++ - **Access Control**: Scenarios are assigned to appropriate instructors and trainees based on company policies
++ 
++ ![Scenarios List](./designer-scenarios-list.png)
++ 
++ ## Best Practices
++ 
++ 1. **Plan Before Creating**: Review company requirements and standards before creating scenarios
++ 2. **Use Auto-Complete**: Leverage auto-suggest features to ensure consistency
++ 3. **Verify Information**: Double-check all flight data, routes, and procedures
++ 4. **Test Scenarios**: Review scenarios in preview mode before publishing
++ 5. **Coordinate with Team**: Communicate with other designers when working on shared scenarios
++ 6. **Save Frequently**: Save your work regularly to avoid data loss
++ 7. **Check Sync Status**: Verify synchronization status, especially after offline work
++ 8. **Follow Company Standards**: Adhere to your company's scenario organization and naming conventions
++ 
++ ## Troubleshooting
++ 
++ ### Sync Issues
++ 
++ - **Check Connection**: Verify internet connectivity
++ - **Manual Sync**: Use the sync button to manually trigger synchronization
++ - **Conflict Resolution**: Review conflict notifications and resolve as needed
++ 
++ ### Auto-Complete Not Working
++ 
++ - **Check Database**: Ensure aviation databases are up to date
++ - **Clear Cache**: Clear application cache if suggestions are outdated
++ - **Contact Support**: Report persistent issues to system administrator
++ 
++ ### Access Issues
++ 
++ - **Verify Role**: Confirm you have Designer role permissions
++ - **Check Assignment**: Ensure you are assigned to the appropriate scenarios
++ - **Contact Administrator**: Request access if needed
++ 
++ ---
++ 
++ *For additional support or questions about the Designer role, contact your system administrator or refer to the [Technical Documentation](../technical/technologies).*
++ 
+```
+
+</details>
+
+</tool-use>
+
+---
+
+
+
+---
+
+
+Updating the sidebar to include the new pages:
+
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="search_replace">
+
+<details><summary>Tool use: **search_replace** • Edit file: /Users/lidakis/WebstormProjects/AeroEBT_Documentation/sidebars.js</summary>
+
+**Chunk 1**
+Lines added: 2, lines removed: undefined
+
+```diff
+@@ -149,7 +149,9 @@
+            collapsed: true,
+            items: [
++             'ebt-instructor/user-guides/roles',
+              'ebt-instructor/user-guides/getting-started',
+              'ebt-instructor/user-guides/features',
+              'ebt-instructor/user-guides/user-guide',
++             'ebt-instructor/user-guides/designer',
+            ],
+          },
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: /Users/lidakis/WebstormProjects/AeroEBT_Documentation/versioned_sidebars/version-0.21.1-sidebars.json</summary>
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+Updating the versioned sidebar and copying the new files to the versioned docs:
+
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="search_replace">
+
+<details><summary>Tool use: **search_replace** • Edit file: /Users/lidakis/WebstormProjects/AeroEBT_Documentation/versioned_sidebars/version-0.21.1-sidebars.json</summary>
+
+**Chunk 1**
+Lines added: 3, lines removed: 1
+
+```diff
+@@ -122,7 +122,9 @@
+            "label": "User Guides",
+            "items": [
++             "ebt-instructor/user-guides/roles",
+              "ebt-instructor/user-guides/getting-started",
+              "ebt-instructor/user-guides/features",
+-             "ebt-instructor/user-guides/user-guide"
++             "ebt-instructor/user-guides/user-guide",
++             "ebt-instructor/user-guides/designer"
+            ]
+          },
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_cmd">
+<details><summary>Tool use: **run_terminal_cmd** • Run command: cp /Users/lidakis/WebstormProjects/AeroEBT_Documentation/docs/ebt-instructor/user-guides/roles.md /Users/lidakis/WebstormProjects/AeroEBT_Documentation/versioned_docs/version-0.21.1/ebt-instructor/user-guides/roles.md</summary>
+
+```bash
+cp /Users/lidakis/WebstormProjects/AeroEBT_Documentation/docs/ebt-instructor/user-guides/roles.md /Users/lidakis/WebstormProjects/AeroEBT_Documentation/versioned_docs/version-0.21.1/ebt-instructor/user-guides/roles.md
+```
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+
+---
+
+_**User (2026-01-15 11:36Z)**_
+
+retry to see if we have left something , if everything ok 
+
+---
+
+_**Agent (model default, mode Agent)**_
+
+
 
 ---
 

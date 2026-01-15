@@ -148,9 +148,11 @@ module.exports = {
           label: 'User Guides',
           collapsed: true,
           items: [
+            'ebt-instructor/user-guides/roles',
             'ebt-instructor/user-guides/getting-started',
             'ebt-instructor/user-guides/features',
             'ebt-instructor/user-guides/user-guide',
+            'ebt-instructor/user-guides/designer',
           ],
         },
         {
