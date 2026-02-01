@@ -10,6 +10,12 @@ Implementation roadmap specifically for the Training Department focusing on cont
 
 The Training Department manages training content, curricula, and instructor assignments to ensure effective training delivery using EBT Instructor.
 
+## Important notes
+
+- These roadmaps are **indicative** timelines based on implementation experience; actual delivery can differ from reality.
+- Timeline and sequencing depend on **client readiness** and **inputs/availability from each department** (e.g., access to systems, data, stakeholders, approvals).
+- Each department roadmap should be treated as **additive** to the others for overall planning. For example, if IT is 8 weeks and Flight Standards is 8 weeks, the combined plan is **8 + 8 = 16 weeks** (unless you explicitly plan and staff parallel workstreams).
+
 ## Focus Areas
 
 ### Content Management
@@ -92,6 +98,94 @@ The Training Department manages training content, curricula, and instructor assi
 - ✅ Instructors trained and operational
 - ✅ Pilot program successful
 - ✅ Training delivery optimized
+
+## Gantt Chart (based on the phases above)
+
+<div className="ganttContainer">
+  <table className="ganttTable">
+    <thead>
+      <tr>
+        <th>Phase</th>
+        <th>W1</th>
+        <th>W2</th>
+        <th>W3</th>
+        <th>W4</th>
+        <th>W5</th>
+        <th>W6</th>
+        <th>W7</th>
+        <th>W8</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Phase 1</strong> (Content Assessment)</td>
+        <td className="ganttFill">&nbsp;</td>
+        <td className="ganttFill">&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td><strong>Phase 2</strong> (Content Migration)</td>
+        <td>&nbsp;</td>
+        <td className="ganttFill">&nbsp;</td>
+        <td className="ganttFill">&nbsp;</td>
+        <td className="ganttFill">&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td><strong>Phase 3</strong> (Curriculum Configuration)</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td className="ganttFill">&nbsp;</td>
+        <td className="ganttFill">&nbsp;</td>
+        <td className="ganttFill">&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td><strong>Phase 4</strong> (Instructor Setup)</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td className="ganttFill">&nbsp;</td>
+        <td className="ganttFill">&nbsp;</td>
+        <td className="ganttFill">&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td><strong>Phase 5</strong> (Pilot Training)</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td className="ganttFill">&nbsp;</td>
+        <td className="ganttFill">&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td><strong>Phase 6</strong> (Full Deployment)</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td className="ganttFill">&nbsp;</td>
+        <td className="ganttFill">&nbsp;</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 ---
 

@@ -196,3 +196,37 @@ h1, h2, h3, h4, h5, h6,
   -webkit-mask-image: url('https://api.iconify.design/mdi/alert-circle-outline.svg?color=%23000000');
   mask-image: url('https://api.iconify.design/mdi/alert-circle-outline.svg?color=%23000000');
 }
+
+/* Roadmap gantt tables (MDX-safe: no inline JSX styles) */
+.ganttContainer {
+  overflow-x: auto;
+}
+
+.ganttTable {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 760px;
+}
+
+.ganttTable th,
+.ganttTable td {
+  border: 1px solid var(--ifm-color-emphasis-300);
+  padding: 0.35rem 0.5rem;
+}
+
+.ganttTable th {
+  text-align: center;
+  font-weight: 600;
+}
+
+.ganttTable th:first-child {
+  text-align: left;
+}
+
+.ganttTable td:first-child {
+  text-align: left;
+}
+
+.ganttFill {
+  background: rgba(24, 144, 255, 0.25);
+}
