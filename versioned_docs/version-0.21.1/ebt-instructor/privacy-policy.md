@@ -3,7 +3,7 @@
 **EBT Instructor Application**
 
 **Effective Date:** January 15, 2026  
-**Last Updated:** January 15, 2026  
+**Last Updated:** September 29, 2026  
 **Version:** 2.0
 
 ---
@@ -164,24 +164,25 @@ We collect and process the following categories of personal data:
 
 | Category | Data Elements | Purpose |
 |----------|---------------|---------|
-| **Account Information** | Email address, password (stored in hashed form), user ID | Account creation, authentication, and account management |
+| **Account Information** | Name, email address, password (stored in hashed form), user ID | Account creation, authentication, and account management |
 | **Profile Information** | User role (e.g., instructor, trainee), organizational affiliation | Service personalization and access control |
-| **User-Generated Content** | Training scenarios, flight training data, competency assessments, notes | Provision of training services and data synchronization |
+| **User-Generated Content** | Training scenarios, flight training data, competency assessments and grades, typed and handwritten notes, session narratives, checklist marks, signatures, training form PDFs | Provision of training services and data synchronization |
+| **Photos and Documents** | Wallet attachments and scanned documents you add | Credential and document management |
 | **Communications** | Correspondence with our support team, feedback, inquiries | Customer support and service improvement |
 
 ### 3.2 Information Collected Automatically
 
 | Category | Data Elements | Purpose |
 |----------|---------------|---------|
-| **Device Information** | Device type, operating system version, unique device identifiers | Service optimization and security |
+| **Device Information** | Device type, operating system version, the app's vendor identifier | Keeping your devices and synced data consistent, security |
 | **Authentication Tokens** | Access tokens, refresh tokens (stored locally in encrypted Keychain) | Session management and secure authentication |
-| **Usage Data** | Features accessed, timestamps of access, error logs | Service improvement and troubleshooting |
+| **Usage Data** | Features accessed, timestamps of access, error logs, AI usage records (feature, provider, amount processed; not the content) | Service improvement and troubleshooting |
 
 ### 3.3 Information We Do Not Collect
 
 We want to be transparent about the data we **do not** collect:
 
-- **Location Data:** We do not collect precise or coarse location data
+- **Location Data:** We do not collect location data. If you turn on My position on the scenario map, your location is used on your device only
 - **Advertising Identifiers:** We do not collect IDFA (Identifier for Advertisers) or similar advertising identifiers
 - **Biometric Data:** We do not collect fingerprints, facial recognition data, or other biometric information
 - **Health or Fitness Data:** We do not collect health-related information
@@ -226,7 +227,7 @@ Processing is necessary for compliance with legal obligations to which we are su
 
 ### 4.4 Consent (Article 6(1)(a))
 
-Where required by law, we will obtain your explicit consent before processing your personal data for specific purposes. You have the right to withdraw consent at any time, without affecting the lawfulness of processing based on consent before its withdrawal.
+Where required by law, we will obtain your explicit consent before processing your personal data for specific purposes. Sending data to a third-party AI service always requires your consent in the App first (see section 6.1a). You have the right to withdraw consent at any time, without affecting the lawfulness of processing based on consent before its withdrawal.
 
 ---
 
@@ -284,8 +285,18 @@ We engage trusted third-party service providers who process personal data on our
 | Service Provider | Purpose | Data Shared | Location |
 |------------------|---------|-------------|----------|
 | **Supabase, Inc.** | Authentication, user account management, and database services | Email address, user ID, authentication tokens, user role | United States, with global infrastructure |
-| **Couchbase, Inc.** | Data synchronization and cloud database services | Training scenarios, user-generated content, usage data | United States (Capella Cloud) |
+| **Couchbase Sync Gateway operated by SkyDynamics** (dbms.skydynamics.aero) | Storage and synchronization of training data between devices | Training scenarios, user-generated content, usage data | Operated by SkyDynamics |
+| **Microsoft Corporation** (Entra ID) | Sign-in, when your organization uses Microsoft sign-in | Email address, name, account identifier | Per your organization's Microsoft tenant |
+| **Google Cloud** | Generation and delivery of signed training form PDFs | Training form content, names, signatures, email address of recipients | Switzerland (europe-west6, Zurich) |
+| **Amazon Web Services** | Download of map terrain tiles | The map area requested (no account details) | Global |
+| **Third-party AI providers** (see 6.1a) | Optional AI features, only after you allow it | Only the data listed when you allow it | Per provider |
 | **Apple Inc.** | App distribution via App Store, crash reporting (if enabled) | Device information, crash logs (aggregated) | United States |
+
+### 6.1a Third-Party AI Services
+
+Some optional features use a third-party AI service chosen by your organization. **Nothing is sent to a third-party AI service until you allow it.** The first time a feature needs a provider, the App shows which provider will receive the data (for example OpenAI, Anthropic, DeepSeek, Alibaba Cloud (Qwen), Moonshot AI (Kimi), AeroBrain.ai, or a service configured by your organization), the address it is sent to, and the kinds of data that feature sends. You choose **Allow** or **Don't Allow**. If you choose Don't Allow, the feature stays off and nothing is sent. You can change your choice at any time in **Settings > Privacy > AI Data Sharing**. The App asks again when this disclosure changes or when a feature needs a new kind of data.
+
+Depending on the feature, the data sent can include trainee names, typed notes, images of handwritten notes, grades and competency scores, scenario content, chat messages, text extracted from documents you import, and the text you are editing. When your organization selects server-side processing, the data is sent to SkyDynamics servers, which forward it to the provider for the duration of the request. Apple Intelligence runs on your device, and an AI server running on the iPad itself is not a third party; neither requires this consent. An AI server elsewhere on your organization's network is shown as a Custom AI service and asks for consent like any other provider. Your AI data sharing choices are stored on your device, kept when you sign out and removed when you delete your account.
 
 ### 6.2 Organizational Administrators
 
