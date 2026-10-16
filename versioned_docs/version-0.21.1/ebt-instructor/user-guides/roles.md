@@ -68,3 +68,11 @@ Your role is assigned by your organization's administrator based on your positio
 ---
 
 *For more information about specific role capabilities, see the [Designer Guide](./designer), [Instructor Guide](./user-guide), or contact your administrator.*
+
+## If you hold more than one role
+
+Since 16 October 2026 a person's roles add up. If you hold more than one role (for example an instructor role and a CCI or SFI role), you get every feature that any of your roles allows, on the iPad and on the web admin. People with one role see no change.
+
+From Instructor 1.47 your organisation can also hide single pilot profile tabs (Progress, Stats, Assignments, Certificates, Expiries, Grading Reports) and single Company Settings sections for a role. The General tab always shows. If a tab or section you need is missing, ask your organisation administrator to check **Feature Access** in the web admin.
+
+See [Feature Access: roles that add up and iPad switches](../../aero-ebt/user-guides/feature-access-and-roles.md) for the details.

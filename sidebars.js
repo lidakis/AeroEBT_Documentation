@@ -32,6 +32,7 @@ module.exports = {
             'aero-ebt/user-guides/getting-started',
             'aero-ebt/user-guides/features',
             'aero-ebt/user-guides/user-guide',
+            'aero-ebt/user-guides/feature-access-and-roles',
           ],
         },
         {
